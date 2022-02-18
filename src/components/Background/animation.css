@@ -1,0 +1,58 @@
+.tile-30 {
+  animation: 1.8s tiltFall forwards ease-in;
+  animation-delay: 3s;
+  cursor: pointer;
+}
+
+@keyframes tiltFall {
+  0% {
+    transform: rotateZ(0deg) translateX(0px, 0px);
+  }
+  40% {
+    transform: rotateZ(70deg) translate(6vh, 0.5vw);
+  }
+  50% {
+    transform: rotateZ(50deg) translate(4.5vh, 0.7vw);
+  }
+  60% {
+    transform: rotateZ(70deg) translate(6vh, 0.5vw);
+  }
+  65% {
+    transform: rotateZ(70deg) translate(6vh, 0.5vw);
+  }
+
+  100% {
+    transform: rotateZ(70deg) translate(6vh, 0.5vw);
+  }
+}
+
+.fallOff {
+  animation: 1s FallOff forwards linear;
+}
+
+@keyframes FallOff {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation: FadeOut 1.5s forwards ease-in-out;
+}
+
+@keyframes FadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
