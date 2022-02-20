@@ -23,3 +23,8 @@ export const CategoryContainer = styled.ul`
     cursor: pointer;
   }
 `;
+
+export const ProjectContainer = styled.div`
+  width: 100vw;
+  overflow-x: auto;
+`;

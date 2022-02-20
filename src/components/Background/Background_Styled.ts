@@ -12,7 +12,6 @@ export const Container = styled.div<{ bgColor: string }>`
 
 export const Tiles = styled.div<{
   size: number;
-  delay: number;
 }>`
   width: ${({ size }) => size - 4}px;
   height: ${({ size }) => size - 4}px;

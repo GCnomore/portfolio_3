@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import _ from "lodash";
 
 import "./animation.css";
-import * as BG from "./Background_Styled";
+import * as Styled from "./Background_Styled";
 
 export default function Background() {
   const sw: number = window.screen.availWidth;
@@ -14,12 +14,11 @@ export default function Background() {
     const tiles: JSX.Element[] = [];
     for (let i: number = 0; i < total; i++) {
       tiles.push(
-        <BG.Tiles
+        <Styled.Tiles
           key={`tile${i}`}
           className={`tile-${i} tiles`}
-          onClick={() => i == 30 && addAnimation()}
+          onClick={() => i === 30 && addAnimation()}
           size={rows}
-          delay={i}
         />
       );
     }
@@ -49,8 +48,8 @@ export default function Background() {
   };
 
   return (
-    <BG.Container className="bgContainer" bgColor={"#121212"}>
+    <Styled.Container className="bgContainer" bgColor={"#121212"}>
       {renderTiles()}
-    </BG.Container>
+    </Styled.Container>
   );
 }

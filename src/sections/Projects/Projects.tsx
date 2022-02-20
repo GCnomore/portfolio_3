@@ -38,15 +38,17 @@ export default function Projects() {
         ))}
       </Styled.CategoryContainer>
       <h3>{category?.name}</h3>
-      {category.id === 1 ? (
-        <From_Work />
-      ) : category.id === 2 ? (
-        <Personal />
-      ) : category.id === 3 ? (
-        <From_Bootcamp />
-      ) : (
-        <></>
-      )}
+      <Styled.ProjectContainer>
+        {category.id === 1 ? (
+          <From_Work />
+        ) : category.id === 2 ? (
+          <Personal />
+        ) : category.id === 3 ? (
+          <From_Bootcamp />
+        ) : (
+          <></>
+        )}
+      </Styled.ProjectContainer>
     </Styled.CONTAINER>
   );
 }
