@@ -2,13 +2,9 @@ import React, { useState } from "react";
 import From_Bootcamp from "./From_Bootcamp/From_Bootcamp";
 import From_Work from "./From_Work/From_Work";
 import Personal from "./Personal/Personal";
+import { ICategory } from "./Projects_Interface";
 
 import * as Styled from "./Projects_Styled";
-
-interface ICategory {
-  id: number;
-  name: string;
-}
 
 const CATEGORY: ICategory[] = [
   {
