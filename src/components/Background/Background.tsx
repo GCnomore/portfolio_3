@@ -4,7 +4,11 @@ import _ from "lodash";
 import "./animation.css";
 import * as Styled from "./Background_Styled";
 
-export default function Background() {
+interface BackgroundProps {
+  setIsBgGone: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function Background(props: BackgroundProps) {
   const sw: number = window.screen.availWidth;
   const sh: number = window.screen.availHeight;
   const rows: number = sw / 30 - 2;
@@ -44,6 +48,7 @@ export default function Background() {
     //! Too may DOM elements... Remove
     setTimeout(() => {
       document.querySelector(".bgContainer")?.remove();
+      props.setIsBgGone(true);
     }, (total - 1) * 6 + 1600);
   };
 

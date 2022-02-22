@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+
+import { Divider } from "../../components/Background/Divider/Divider";
 import From_Bootcamp from "./From_Bootcamp/From_Bootcamp";
 import From_Work from "./From_Work/From_Work";
 import Personal from "./Personal/Personal";
 import { ICategory } from "./Projects_Interface";
-
 import * as Styled from "./Projects_Styled";
 
 const CATEGORY: ICategory[] = [
@@ -26,12 +27,17 @@ export default function Projects() {
 
   return (
     <Styled.CONTAINER>
-      <h2>Projects</h2>
-      <Styled.Divider />
+      <Styled.SectionTitle>
+        <h2>Projects</h2>
+      </Styled.SectionTitle>
+
+      <Divider />
       <Styled.CategoryContainer>
-        {CATEGORY.map((item: ICategory) => (
-          <li>{item.name}</li>
-        ))}
+        <ul>
+          {CATEGORY.map((item: ICategory, index: number) => (
+            <li key={`${item.name}${index}`}>{item.name}</li>
+          ))}
+        </ul>
       </Styled.CategoryContainer>
       <h3>{category?.name}</h3>
       <Styled.ProjectContainer>
