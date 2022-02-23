@@ -1,15 +1,21 @@
 import React from "react";
-import { Divider } from "../../components/Background/Divider/Divider";
+import { Divider } from "../../components/Divider/Divider";
 
 import * as Styled from "./About_Styled";
 
-export default function About() {
+interface AboutProps {
+  isBgGone: boolean;
+}
+
+const About: React.FC<AboutProps> = ({ isBgGone }) => {
   return (
-    <Styled.Container>
+    <Styled.Container isBgGone={isBgGone}>
       <Styled.SectionTitle>
         <h2>About</h2>
       </Styled.SectionTitle>
       <Divider />
     </Styled.Container>
   );
-}
+};
+
+export default About;

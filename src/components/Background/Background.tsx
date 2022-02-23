@@ -12,7 +12,7 @@ export default function Background(props: BackgroundProps) {
   const sw: number = window.screen.availWidth;
   const sh: number = window.screen.availHeight;
   const rows: number = sw / 30 - 2;
-  const total: number = Math.round(sh / rows) * 30 + 60;
+  const total: number = Math.round(sh / rows) * 30 + 90;
 
   const renderTiles = (): JSX.Element[] => {
     const tiles: JSX.Element[] = [];

@@ -11,16 +11,11 @@ export default function Home() {
   return (
     <Styled.Container>
       {/* Background will be removed from DOM once animation is over */}
-      {/* <Background setIsBgGone={setIsBgGone} />
-      {isBgGone ? (
-        <> */}
-      <Cover />
-      <About />
-      <Projects />
-      {/* </>
-      ) : (
-        <></>
-      )} */}
+      <Background setIsBgGone={setIsBgGone} />
+
+      <Cover isBgGone={isBgGone} />
+      <About isBgGone={isBgGone} />
+      <Projects isBgGone={isBgGone} />
     </Styled.Container>
   );
 }

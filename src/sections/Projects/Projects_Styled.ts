@@ -1,9 +1,9 @@
 import styled from "styled-components/macro";
 
-export const CONTAINER = styled.section`
+export const CONTAINER = styled.section<{ isBgGone: boolean }>`
   width: 100%;
   height: 80vh;
-  display: flex;
+  display: ${({ isBgGone }) => (isBgGone ? "flex" : "none")};
   flex-direction: column;
   align-items: center;
 `;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Divider } from "../../components/Background/Divider/Divider";
+import { Divider } from "../../components/Divider/Divider";
 import From_Bootcamp from "./From_Bootcamp/From_Bootcamp";
 import From_Work from "./From_Work/From_Work";
 import Personal from "./Personal/Personal";
@@ -22,11 +22,15 @@ const CATEGORY: ICategory[] = [
   },
 ];
 
-export default function Projects() {
+interface ProjectsProps {
+  isBgGone: boolean;
+}
+
+const Projects: React.FC<ProjectsProps> = ({ isBgGone }) => {
   const [category, setCategory] = useState<ICategory>({ id: 1, name: "Work" });
 
   return (
-    <Styled.CONTAINER>
+    <Styled.CONTAINER isBgGone={isBgGone}>
       <Styled.SectionTitle>
         <h2>Projects</h2>
       </Styled.SectionTitle>
@@ -53,4 +57,6 @@ export default function Projects() {
       </Styled.ProjectContainer>
     </Styled.CONTAINER>
   );
-}
+};
+
+export default Projects;
