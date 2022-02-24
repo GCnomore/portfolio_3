@@ -32,6 +32,7 @@ export default function Background(props: BackgroundProps) {
 
   const addAnimation = (): void => {
     const tiles = document.querySelectorAll(".tiles");
+    const bgContainer = document.querySelector(".bgContainer");
 
     //* Randomly take off tiles
     _.shuffle(tiles).forEach((item, index) => {
@@ -42,19 +43,17 @@ export default function Background(props: BackgroundProps) {
 
     //* Fadeout when tiles are almost gone
     setTimeout(() => {
-      document.querySelector(".bgContainer")?.classList.add("fadeOut");
-    }, (total - 1) * 6 - 100);
+      bgContainer?.classList.add("lightToDark");
+    }, (total - 1) * 6 - 500);
 
     //! Too may DOM elements... Remove
     setTimeout(() => {
-      document.querySelector(".bgContainer")?.remove();
+      bgContainer?.remove();
       props.setIsBgGone(true);
-    }, (total - 1) * 6 + 1600);
+    }, (total - 1) * 6 + 2500);
   };
 
   return (
-    <Styled.Container className="bgContainer" bgColor={"#121212"}>
-      {renderTiles()}
-    </Styled.Container>
+    <Styled.Container className="bgContainer">{renderTiles()}</Styled.Container>
   );
 }

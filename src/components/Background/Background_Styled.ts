@@ -1,13 +1,13 @@
 import styled from "styled-components/macro";
 
-export const Container = styled.div<{ bgColor: string }>`
+export const Container = styled.div`
   display: flex;
   justify-content: center;
   width: 100vw;
   height: 100vh;
   flex-wrap: wrap;
   overflow: hidden;
-  background-color: ${({ bgColor }) => bgColor};
+  background-color: #121212;
 `;
 
 export const Tiles = styled.div<{

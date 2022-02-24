@@ -56,3 +56,19 @@
     opacity: 0;
   }
 }
+
+.lightToDark {
+  animation: LightToDark 3s forwards linear;
+}
+
+@keyframes LightToDark {
+  0% {
+    background-color: #121212;
+  }
+  50% {
+    background-color: white;
+  }
+  100% {
+    background-color: #242424;
+  }
+}
