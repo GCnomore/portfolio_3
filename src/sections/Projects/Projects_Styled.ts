@@ -1,11 +1,14 @@
 import styled from "styled-components/macro";
+import { FONT_FAMILY } from "../../constants";
 
-export const CONTAINER = styled.section<{ isBgGone: boolean }>`
+export const CONTAINER = styled.section`
   width: 100%;
   height: 80vh;
-  display: ${({ isBgGone }) => (isBgGone ? "flex" : "none")};
+  display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+  font-family: ${FONT_FAMILY};
 `;
 
 export const SectionTitle = styled.div`
@@ -20,20 +23,23 @@ export const CategoryContainer = styled.div`
 
   > ul {
     display: flex;
-    margin: 0;
+    margin: 1rem 0 0 0;
     padding: 0 10%;
     list-style: none;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-
-    > li {
-      cursor: pointer;
-      width: 10%;
-      min-width: 8rem;
-      text-align: center;
-    }
   }
+`;
+
+export const Category = styled.li<{ selected: boolean }>`
+  cursor: pointer;
+  width: 10%;
+  min-width: 8rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: ${({ selected }) => selected && "0px 0px 30px white"};
 `;
 
 export const ProjectContainer = styled.div`

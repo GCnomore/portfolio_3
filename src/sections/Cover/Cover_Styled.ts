@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components/macro";
+import { FONT_FAMILY } from "../../constants";
 import { CONTAINER } from "../Projects/Projects_Styled";
 
 export const Container = styled(CONTAINER)<{ isBgGone: boolean }>`
@@ -16,8 +17,9 @@ export const Title = styled.div`
 
   > h1 {
     color: white;
-    font-family: "Mukta", sans-serif;
-    text-shadow: 2px 2px 5px black;
+    font-family: ${FONT_FAMILY};
+    text-shadow: 4px 4px 2px black;
+    user-select: none;
   }
 
   > h1:nth-child(1) {
@@ -37,6 +39,7 @@ export const Bg1 = styled.img`
   position: absolute;
   top: -20rem;
   transform: translateZ(-20px) scale(3);
+  user-select: none;
 `;
 
 export const Cloud1 = styled.img`
@@ -47,6 +50,7 @@ export const Cloud1 = styled.img`
   left: -50vw;
   transform: translateZ(-15px) scale(2);
   filter: drop-shadow(-10px 20px 20px black);
+  user-select: none;
 `;
 
 export const Cloud2 = styled.img`
@@ -57,6 +61,7 @@ export const Cloud2 = styled.img`
   left: 100vw;
   transform: translateZ(-10px) scale(1.2);
   filter: drop-shadow(10px 25px 10px #121212);
+  user-select: none;
 `;
 
 export const Cloud3 = styled.img`
@@ -66,4 +71,5 @@ export const Cloud3 = styled.img`
   top: 60vh;
   left: 10vw;
   filter: drop-shadow(20px 25px 5px #191919);
+  user-select: none;
 `;

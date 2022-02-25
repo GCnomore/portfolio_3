@@ -6,6 +6,33 @@ import Cover from "../Cover/Cover";
 import Projects from "../Projects/Projects";
 import Lightning1 from "../../images/lightning1.webp";
 import Lightning2 from "../../images/lightning2.webp";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInbox, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+
+interface IContacts {
+  name: string;
+  url: string;
+  icon: IconDefinition;
+}
+
+const contacts: IContacts[] = [
+  {
+    name: "Github",
+    url: "https://github.com/GCnomore",
+    icon: faGithub,
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/isaac-choi-6a68bb1b4/",
+    icon: faLinkedinIn,
+  },
+  {
+    name: "Email",
+    url: "mailto:isaacgc08@gmail.com",
+    icon: faInbox,
+  },
+];
 
 export default function Home() {
   const [isBgGone, setIsBgGone] = useState<boolean>(false);
@@ -35,10 +62,26 @@ export default function Home() {
     <Styled.Container onScroll={trackScroll}>
       {/* Background will be removed from DOM once animation is over */}
       <Background setIsBgGone={setIsBgGone} />
-
       <Cover isBgGone={isBgGone} />
-      <About isBgGone={isBgGone} />
-      <Projects isBgGone={isBgGone} />
+
+      {isBgGone ? (
+        <>
+          <About />
+          <Projects />
+          <Styled.ContactContainer>
+            {contacts.map((item: IContacts, index: number) => (
+              <Styled.Contacts key={`${index}contacts`}>
+                <a target="_blank" href={item.url}>
+                  <FontAwesomeIcon icon={item.icon} />
+                </a>
+              </Styled.Contacts>
+            ))}
+          </Styled.ContactContainer>
+        </>
+      ) : (
+        <></>
+      )}
+
       {strike.show && (
         <>
           <Styled.LightningCover strike={strike.show} />{" "}

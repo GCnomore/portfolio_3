@@ -22,15 +22,11 @@ const CATEGORY: ICategory[] = [
   },
 ];
 
-interface ProjectsProps {
-  isBgGone: boolean;
-}
-
-const Projects: React.FC<ProjectsProps> = ({ isBgGone }) => {
+export default function Projects() {
   const [category, setCategory] = useState<ICategory>({ id: 1, name: "Work" });
 
   return (
-    <Styled.CONTAINER isBgGone={isBgGone}>
+    <Styled.CONTAINER>
       <Styled.SectionTitle>
         <h2>Projects</h2>
       </Styled.SectionTitle>
@@ -39,11 +35,16 @@ const Projects: React.FC<ProjectsProps> = ({ isBgGone }) => {
       <Styled.CategoryContainer>
         <ul>
           {CATEGORY.map((item: ICategory, index: number) => (
-            <li key={`${item.name}${index}`}>{item.name}</li>
+            <Styled.Category
+              selected={index + 1 === category.id}
+              key={`${item.name}${index}`}
+              onClick={() => setCategory({ id: index + 1, name: item.name })}
+            >
+              {item.name}
+            </Styled.Category>
           ))}
         </ul>
       </Styled.CategoryContainer>
-      <h3>{category?.name}</h3>
       <Styled.ProjectContainer>
         {category.id === 1 ? (
           <From_Work />
@@ -57,6 +58,4 @@ const Projects: React.FC<ProjectsProps> = ({ isBgGone }) => {
       </Styled.ProjectContainer>
     </Styled.CONTAINER>
   );
-};
-
-export default Projects;
+}
