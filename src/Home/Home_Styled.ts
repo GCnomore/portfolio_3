@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components/macro";
-import { FONT_FAMILY, FONT_HIGHLIGHT } from "../../constants";
+import { FONT_FAMILY, FONT_HIGHLIGHT } from "../constants";
 
 const Strike = keyframes`
   0%{

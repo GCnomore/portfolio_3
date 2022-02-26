@@ -5,11 +5,14 @@ import { LABEL } from "../../sections/Projects/Projects_Data";
 export const Container = styled.div`
   width: 20vw;
   height: 20vw;
+  min-width: 275px;
+  min-height: 275px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   position: relative;
   font-family: ${FONT_FAMILY};
+  transition: 0.5s;
 
   > img {
     height: 100%;
@@ -46,6 +49,7 @@ export const Content = styled.div<{ show: boolean }>`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
 `;
 
 export const TechsContainer = styled.div`

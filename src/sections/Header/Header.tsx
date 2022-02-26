@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as Styled from "./Cover_Styled";
+import * as Styled from "./Header_Styled";
 import "./animation.css";
 import bg1 from "../../images/pngegg.webp";
 import cloud1 from "../../images/cloud1.webp";
@@ -11,7 +11,7 @@ interface CoverProps {
   isBgGone: boolean;
 }
 
-const Cover: React.FC<CoverProps> = ({ isBgGone }) => {
+const Header: React.FC<CoverProps> = ({ isBgGone }) => {
   console.log(isBgGone);
   return (
     <Styled.Container isBgGone={isBgGone}>
@@ -27,4 +27,4 @@ const Cover: React.FC<CoverProps> = ({ isBgGone }) => {
   );
 };
 
-export default Cover;
+export default Header;

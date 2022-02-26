@@ -44,9 +44,9 @@ export const Category = styled.li<{ selected: boolean }>`
 `;
 
 export const ProjectContainer = styled.div`
-  overflow-x: auto;
   display: flex;
   width: 100%;
+  height: 100%;
 
   > div {
     display: flex;

@@ -2,9 +2,6 @@ import React, { useState } from "react";
 
 import { Divider } from "../../components/Divider/Divider";
 import Project_Card from "../../components/Project_Card/Project_Card";
-import From_Bootcamp from "./From_Bootcamp/From_Bootcamp";
-import From_Work from "./From_Work/From_Work";
-import Personal from "./Personal/Personal";
 import {
   CATEGORY,
   ICategory,

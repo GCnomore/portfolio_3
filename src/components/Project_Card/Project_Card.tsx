@@ -23,8 +23,8 @@ export default function Project_Card(props: { project: IProjectData }) {
         <Styled.TechsContainer>
           <span>Tech:</span>
           <Styled.Techs>
-            {tech.map((item) => (
-              <li>{item}</li>
+            {tech.map((item: string) => (
+              <li key={`${name}-tech-${item}`}>{item}</li>
             ))}
           </Styled.Techs>
         </Styled.TechsContainer>

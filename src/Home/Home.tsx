@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import * as Styled from "./Home_Styled";
-import Background from "../../components/Background/Background";
-import About from "../About/About";
-import Cover from "../Cover/Cover";
-import Projects from "../Projects/Projects";
-import Lightning1 from "../../images/lightning1.webp";
-import Lightning2 from "../../images/lightning2.webp";
+import Background from "../components/Background/Background";
+import About from "../sections/About/About";
+import Header from "../sections/Header/Header";
+import Projects from "../sections/Projects/Projects";
+import Lightning1 from "../images/lightning1.webp";
+import Lightning2 from "../images/lightning2.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInbox, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import Current_Status from "../sections/Current_Status/Current_Status";
 
 interface IContacts {
   name: string;
@@ -62,11 +63,12 @@ export default function Home() {
     <Styled.Container onScroll={trackScroll}>
       {/* Background will be removed from DOM once animation is over */}
       <Background setIsBgGone={setIsBgGone} />
-      <Cover isBgGone={isBgGone} />
+      <Header isBgGone={isBgGone} />
 
       {isBgGone ? (
         <>
           <About />
+          <Current_Status />
           <Projects />
           <Styled.ContactContainer>
             {contacts.map((item: IContacts, index: number) => (
