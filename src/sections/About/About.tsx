@@ -21,7 +21,7 @@ export default function About() {
           their own which is self-taught, right?!)
         </Styled.P2>
         <br />I am a wannabe better-than-yesterday person and believe stress is
-        what makes me grow.
+        what makes me grow!
       </Styled.Content>
     </Styled.Container>
   );

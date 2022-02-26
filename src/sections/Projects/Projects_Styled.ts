@@ -40,8 +40,18 @@ export const Category = styled.li<{ selected: boolean }>`
   font-weight: bold;
   font-size: 1.2rem;
   text-shadow: ${({ selected }) => selected && "0px 0px 30px white"};
+  transition: 0.3s;
 `;
 
 export const ProjectContainer = styled.div`
   overflow-x: auto;
+  display: flex;
+  width: 100%;
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 5rem 9.64%;
+  }
 `;

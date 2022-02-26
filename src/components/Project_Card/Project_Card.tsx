@@ -1,0 +1,38 @@
+import React, { useState } from "react";
+
+import { IProjectData } from "../../sections/Projects/Projects_Data";
+import * as Styled from "./Project_Card_Styled";
+
+export default function Project_Card(props: { project: IProjectData }) {
+  const { content, git, label, name, src, link, tech } = props.project;
+
+  const [showContent, setShowContent] = useState<boolean>(true);
+
+  return (
+    <Styled.Container
+    // onMouseEnter={() => setShowContent(true)}
+    // onMouseLeave={() => setShowContent(false)}
+    >
+      <img src={src} />
+      <Styled.Label letters={label.length} label={label}>
+        {label}
+      </Styled.Label>
+      <Styled.Content show={showContent}>
+        <h3>{name}</h3>
+        <p>{content}</p>
+        <Styled.TechsContainer>
+          <span>Tech:</span>
+          <Styled.Techs>
+            {tech.map((item) => (
+              <li>{item}</li>
+            ))}
+          </Styled.Techs>
+        </Styled.TechsContainer>
+        <Styled.Links>
+          <a href={git}>Github</a>
+          <a href={link}>See Project</a>
+        </Styled.Links>
+      </Styled.Content>
+    </Styled.Container>
+  );
+}
