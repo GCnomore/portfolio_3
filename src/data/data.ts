@@ -1,9 +1,9 @@
-import FoodApp from "../../images/FoodApp_home.webp";
-import GCboard from "../../images/GCboard_home.webp";
-import Pokedex from "../../images/Pokedex_home.webp";
-import Moviehunt from "../../images/Moviehunt.webp";
-import Kokoatalk from "../../images/KokoaTalk_home.webp";
-import Todo from "../../images/Todo_home.webp";
+import FoodApp from "../images/FoodApp_home.webp";
+import GCboard from "../images/GCboard_home.webp";
+import Pokedex from "../images/Pokedex_home.webp";
+import Moviehunt from "../images/Moviehunt.webp";
+import Kokoatalk from "../images/KokoaTalk_home.webp";
+import Todo from "../images/Todo_home.webp";
 
 export enum LABEL {
   PERSONAL = "PERSONAL",
@@ -24,6 +24,11 @@ export interface IProjectData {
 export interface ICategory {
   id: number;
   name: string;
+}
+
+export interface IProgrammingFocus {
+  name: string;
+  ratio: string;
 }
 
 export const CATEGORY: ICategory[] = [
@@ -105,5 +110,28 @@ export const ProjectsData: IProjectData[] = [
     git: "https://github.com/GCnomore/todoApp",
     tech: ["Vue", "Material Deisgn"],
     link: "https://gcnomore.github.io/todoApp/",
+  },
+];
+
+export const ProgrammingFocus: IProgrammingFocus[] = [
+  {
+    name: "Design Pattern",
+    ratio: "100%",
+  },
+  {
+    name: "Frontend Development",
+    ratio: "80%",
+  },
+  {
+    name: "Backend Development",
+    ratio: "30%",
+  },
+  {
+    name: "New Techs",
+    ratio: "70%",
+  },
+  {
+    name: "Tools (Git, Firebase, etc)",
+    ratio: "90%",
   },
 ];

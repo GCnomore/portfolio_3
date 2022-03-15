@@ -1,18 +1,30 @@
 import styled from "styled-components/macro";
-import { FONT_FAMILY, FONT_HIGHLIGHT } from "../../constants";
-import { LABEL } from "../../sections/Projects/Projects_Data";
+import {
+  FONT_FAMILY,
+  FONT_HIGHLIGHT,
+  SCREEN_2XL,
+  SCREEN_LG,
+  SCREEN_MD,
+  SCREEN_XL,
+} from "../../constants";
+import { LABEL } from "../../data/data";
 
 export const Container = styled.div`
-  width: 20vw;
-  height: 20vw;
-  min-width: 275px;
-  min-height: 275px;
+  width: 20rem;
+  height: 20rem;
+  /* min-width: 275px; */
+  /* min-height: 275px; */
   overflow: hidden;
   display: flex;
   justify-content: center;
   position: relative;
   font-family: ${FONT_FAMILY};
   transition: 0.5s;
+
+  @media (max-width: ${SCREEN_XL}) {
+    width: 18rem;
+    height: 18rem;
+  }
 
   > img {
     height: 100%;

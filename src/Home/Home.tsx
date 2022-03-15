@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInbox, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import Current_Status from "../sections/Current_Status/Current_Status";
+import Layout from "../components/Layout/Layout";
 
 interface IContacts {
   name: string;
@@ -67,9 +68,11 @@ export default function Home() {
 
       {isBgGone ? (
         <>
-          <About />
-          <Current_Status />
-          <Projects />
+          <Layout>
+            <About />
+            <Current_Status />
+            <Projects />
+          </Layout>
           <Styled.ContactContainer>
             {contacts.map((item: IContacts, index: number) => (
               <Styled.Contacts key={`${index}contacts`}>

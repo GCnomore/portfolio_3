@@ -7,7 +7,7 @@ import {
   ICategory,
   IProjectData,
   ProjectsData,
-} from "./Projects_Data";
+} from "../../data/data";
 import * as Styled from "./Projects_Styled";
 
 export default function Projects() {

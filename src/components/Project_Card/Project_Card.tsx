@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { IProjectData } from "../../sections/Projects/Projects_Data";
+import { IProjectData } from "../../data/data";
 import * as Styled from "./Project_Card_Styled";
 
 export default function Project_Card(props: { project: IProjectData }) {

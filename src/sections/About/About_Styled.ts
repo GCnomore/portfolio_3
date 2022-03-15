@@ -22,7 +22,6 @@ export const Content = styled.span`
   align-items: flex-end;
   justify-content: center;
   font-size: 1.3rem;
-  width: 70vw;
   > p {
     color: ${FONT_HIGHLIGHT};
     font-weight: 600;
