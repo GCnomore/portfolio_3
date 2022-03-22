@@ -11,6 +11,7 @@ import { faInbox, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import Current_Status from "../sections/Current_Status/Current_Status";
 import Layout from "../components/Layout/Layout";
+import Note from "../sections/Note/Note";
 
 interface IContacts {
   name: string;
@@ -72,6 +73,7 @@ export default function Home() {
             <About />
             <Current_Status />
             <Projects />
+            <Note />
           </Layout>
           <Styled.ContactContainer>
             {contacts.map((item: IContacts, index: number) => (

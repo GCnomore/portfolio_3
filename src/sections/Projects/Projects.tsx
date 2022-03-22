@@ -29,7 +29,7 @@ export default function Projects() {
   };
 
   return (
-    <Styled.CONTAINER>
+    <Styled.Container>
       <Styled.SectionTitle>
         <h2>Projects</h2>
       </Styled.SectionTitle>
@@ -50,6 +50,6 @@ export default function Projects() {
       <Styled.ProjectContainer>
         <div>{renderProjects()}</div>
       </Styled.ProjectContainer>
-    </Styled.CONTAINER>
+    </Styled.Container>
   );
 }

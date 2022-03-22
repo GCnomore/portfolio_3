@@ -6,12 +6,12 @@ import * as Styled from "./Project_Card_Styled";
 export default function Project_Card(props: { project: IProjectData }) {
   const { content, git, label, name, src, link, tech } = props.project;
 
-  const [showContent, setShowContent] = useState<boolean>(true);
+  const [showContent, setShowContent] = useState<boolean>(false);
 
   return (
     <Styled.Container
-    // onMouseEnter={() => setShowContent(true)}
-    // onMouseLeave={() => setShowContent(false)}
+      onMouseEnter={() => setShowContent(true)}
+      onMouseLeave={() => setShowContent(false)}
     >
       <img src={src} />
       <Styled.Label letters={label.length} label={label}>

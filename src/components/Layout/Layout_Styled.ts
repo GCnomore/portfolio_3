@@ -10,6 +10,7 @@ import {
 
 export const Container = styled.div`
   padding: 0 25%;
+  position: relative;
 
   @media (max-width: ${SCREEN_2XL}) {
     padding: 0 20%;

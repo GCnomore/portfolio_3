@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import { CONTAINER } from "../Projects/Projects_Styled";
+import { CONTAINER, SCREEN_LG, SCREEN_SM, SCREEN_XL } from "../../constants";
 
 export const Container = styled(CONTAINER)``;
 
@@ -9,12 +9,20 @@ export const ContentContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
+
+  @media (max-width: ${SCREEN_XL}) {
+    flex-direction: column;
+  }
 `;
 
 export const LifeFocus = styled.div`
   position: relative;
   width: 100%;
-  margin-right: 5rem;
+  margin-right: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   > h3 {
     width: 100%;
@@ -24,6 +32,16 @@ export const LifeFocus = styled.div`
 
   > img {
     width: 80%;
+    min-width: 25rem;
+
+    @media (max-width: ${SCREEN_SM}) {
+      width: 70%;
+      min-width: 15rem;
+    }
+  }
+
+  @media (max-width: ${SCREEN_XL}) {
+    margin-right: 0;
   }
 `;
 
@@ -56,15 +74,25 @@ const FocusRight = styled.div`
 `;
 
 export const Focus1 = styled(FocusLeft)`
-  top: 25%;
+  top: 29%;
   left: 5%;
-  width: 20%;
+  width: 30%;
   height: 4%;
 
   > span {
     font-weight: bold;
     font-size: 1.5rem;
     top: -2.5rem;
+  }
+
+  @media (max-width: ${SCREEN_SM}) {
+    left: 15%;
+    top: 35%;
+    width: 20%;
+
+    > span {
+      font-size: 1.3rem;
+    }
   }
 `;
 
@@ -78,21 +106,40 @@ export const Focus2 = styled(FocusLeft)`
     font-weight: bold;
     font-size: 1.3rem;
   }
+
+  @media (max-width: ${SCREEN_SM}) {
+    left: 12%;
+    top: 55%;
+    width: 15%;
+
+    > span {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const Focus3 = styled(FocusLeft)`
   top: 70%;
   left: 10%;
-  width: 20%;
+  width: 25%;
   height: 2%;
 
   > span {
     font-size: 1.1rem;
   }
+
+  @media (max-width: ${SCREEN_SM}) {
+    left: 10%;
+    width: 30%;
+
+    > span {
+      font-size: 0.9rem;
+    }
+  }
 `;
 
 export const Focus4 = styled(FocusRight)`
-  right: 15%;
+  right: 0;
   top: 32%;
   width: 25%;
   height: 3%;
@@ -101,10 +148,19 @@ export const Focus4 = styled(FocusRight)`
     font-size: 1.1rem;
     font-weight: 600;
   }
+
+  @media (max-width: ${SCREEN_SM}) {
+    right: 15%;
+    top: 40%;
+
+    > span {
+      font-size: 0.9rem;
+    }
+  }
 `;
 
 export const Focus5 = styled(FocusRight)`
-  right: 8%;
+  right: -8%;
   top: 60%;
   width: 30%;
   height: 3%;
@@ -112,9 +168,22 @@ export const Focus5 = styled(FocusRight)`
   > span {
     font-size: 1.3rem;
   }
+
+  @media (max-width: ${SCREEN_SM}) {
+    right: 5%;
+    width: 20%;
+
+    > span {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const ProgrammingFocus = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 
   > h3 {
@@ -122,8 +191,13 @@ export const ProgrammingFocus = styled.div`
     text-align: center;
   }
 
-  > img {
-    width: 80%;
+  > ul {
+    width: 100%;
+    padding: 0;
+  }
+
+  @media (max-width: ${SCREEN_XL}) {
+    margin-top: 5rem;
   }
 `;
 

@@ -1,11 +1,13 @@
 import styled from "styled-components/macro";
-import { FONT_FAMILY, FONT_HIGHLIGHT } from "../../constants";
-import { CONTAINER } from "../Projects/Projects_Styled";
+import {
+  CONTAINER,
+  FONT_FAMILY,
+  FONT_HIGHLIGHT,
+  SCREEN_LG,
+} from "../../constants";
 
 export const Container = styled(CONTAINER)`
-  height: 60vh;
-  margin-top: 220vh;
-  margin-bottom: 30vh;
+  margin-top: 120vh;
   color: white;
   display: flex;
 `;
@@ -22,6 +24,7 @@ export const Content = styled.span`
   align-items: flex-end;
   justify-content: center;
   font-size: 1.3rem;
+
   > p {
     color: ${FONT_HIGHLIGHT};
     font-weight: 600;

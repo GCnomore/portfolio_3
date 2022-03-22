@@ -11,8 +11,11 @@ interface BackgroundProps {
 export default function Background(props: BackgroundProps) {
   const sw: number = window.screen.availWidth;
   const sh: number = window.screen.availHeight;
-  const rows: number = sw / 30 - 2;
-  const total: number = Math.round(sh / rows) * 30 + 90;
+  const tileSize: number = sw < 768 ? sw / 20 - 2 : sw / 30 - 2;
+  const total: number =
+    sw < 768
+      ? Math.round(sh / tileSize) * 20
+      : Math.round(sh / tileSize) * 30 + 90;
 
   const renderTiles = (): JSX.Element[] => {
     const tiles: JSX.Element[] = [];
@@ -22,7 +25,7 @@ export default function Background(props: BackgroundProps) {
           key={`tile${i}`}
           className={`tile-${i} tiles`}
           onClick={() => i === 30 && addAnimation()}
-          size={rows}
+          size={tileSize}
         />
       );
     }
