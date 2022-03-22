@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio_3/static/css/main.7070504f.css",
-    "main.js": "/portfolio_3/static/js/main.ec65fe82.js",
+    "main.js": "/portfolio_3/static/js/main.4a4b18fd.js",
     "static/media/pngegg.webp": "/portfolio_3/static/media/pngegg.bbd884be75a24ae746ff.webp",
     "static/media/brain.png": "/portfolio_3/static/media/brain.da29269a1d5c03aea473.png",
     "static/media/cloud3.webp": "/portfolio_3/static/media/cloud3.04d5c59b8faa14db7a7c.webp",
@@ -9,18 +9,16 @@
     "static/media/cloud1.webp": "/portfolio_3/static/media/cloud1.8f4b0ff26e76324792dd.webp",
     "static/media/FoodApp_home.webp": "/portfolio_3/static/media/FoodApp_home.f4aa8500a6651becb00b.webp",
     "static/media/Moviehunt.webp": "/portfolio_3/static/media/Moviehunt.454095025e7096f8e27c.webp",
-    "static/media/lightning1.webp": "/portfolio_3/static/media/lightning1.a9a1ba42dd3da17b3800.webp",
     "static/media/cloud2.webp": "/portfolio_3/static/media/cloud2.11a175f83fd7194cd9a3.webp",
-    "static/media/lightning2.webp": "/portfolio_3/static/media/lightning2.8866e91e75ab83b2225d.webp",
     "static/media/Pokedex_home.webp": "/portfolio_3/static/media/Pokedex_home.bb0df6d564ed3970be85.webp",
     "static/media/KokoaTalk_home.webp": "/portfolio_3/static/media/KokoaTalk_home.0ad4f9a4c9d3d3fe9899.webp",
     "static/media/Todo_home.webp": "/portfolio_3/static/media/Todo_home.47bf42ce4129159c1a95.webp",
     "index.html": "/portfolio_3/index.html",
     "main.7070504f.css.map": "/portfolio_3/static/css/main.7070504f.css.map",
-    "main.ec65fe82.js.map": "/portfolio_3/static/js/main.ec65fe82.js.map"
+    "main.4a4b18fd.js.map": "/portfolio_3/static/js/main.4a4b18fd.js.map"
   },
   "entrypoints": [
     "static/css/main.7070504f.css",
-    "static/js/main.ec65fe82.js"
+    "static/js/main.4a4b18fd.js"
   ]
 }
