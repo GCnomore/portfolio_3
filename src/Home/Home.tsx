@@ -57,7 +57,6 @@ export default function Home() {
       setTimeout(() => {
         setStrike({ show: false, count: 1 });
       }, 1000);
-      console.log("here");
     }
   };
 
