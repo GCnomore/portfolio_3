@@ -1,12 +1,5 @@
 import styled from "styled-components/macro";
-import {
-  FONT_FAMILY,
-  FONT_HIGHLIGHT,
-  SCREEN_2XL,
-  SCREEN_LG,
-  SCREEN_MD,
-  SCREEN_XL,
-} from "../../constants";
+import { FONT_FAMILY, FONT_HIGHLIGHT, SCREEN_XL } from "../../constants";
 import { LABEL } from "../../data/data";
 
 export const Container = styled.div`

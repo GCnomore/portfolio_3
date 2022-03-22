@@ -4,8 +4,6 @@ import Background from "../components/Background/Background";
 import About from "../sections/About/About";
 import Header from "../sections/Header/Header";
 import Projects from "../sections/Projects/Projects";
-import Lightning1 from "../images/lightning1.webp";
-import Lightning2 from "../images/lightning2.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInbox, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
@@ -39,29 +37,29 @@ const contacts: IContacts[] = [
 
 export default function Home() {
   const [isBgGone, setIsBgGone] = useState<boolean>(false);
-  const [strike, setStrike] = useState<{ show: boolean; count: number }>({
-    show: false,
-    count: 0,
-  });
+  // const [strike, setStrike] = useState<{ show: boolean; count: number }>({
+  //   show: false,
+  //   count: 0,
+  // });
 
-  const trackScroll = (e: React.UIEvent<HTMLDivElement>): void => {
-    const scrollHeight: number = e.currentTarget.scrollHeight;
-    const currentHeight: number = e.currentTarget.scrollTop;
+  // const trackScroll = (e: React.UIEvent<HTMLDivElement>): void => {
+  //   const scrollHeight: number = e.currentTarget.scrollHeight;
+  //   const currentHeight: number = e.currentTarget.scrollTop;
 
-    if (
-      currentHeight >= scrollHeight * 0.3 &&
-      currentHeight <= scrollHeight * 0.32 &&
-      strike.count === 0
-    ) {
-      setStrike({ show: true, count: 0 });
-      setTimeout(() => {
-        setStrike({ show: false, count: 1 });
-      }, 1000);
-    }
-  };
+  //   if (
+  //     currentHeight >= scrollHeight * 0.3 &&
+  //     currentHeight <= scrollHeight * 0.32 &&
+  //     strike.count === 0
+  //   ) {
+  //     setStrike({ show: true, count: 0 });
+  //     setTimeout(() => {
+  //       setStrike({ show: false, count: 1 });
+  //     }, 1000);
+  //   }
+  // };
 
   return (
-    <Styled.Container onScroll={trackScroll}>
+    <Styled.Container>
       {/* Background will be removed from DOM once animation is over */}
       <Background setIsBgGone={setIsBgGone} />
       <Header isBgGone={isBgGone} />
@@ -77,7 +75,7 @@ export default function Home() {
           <Styled.ContactContainer>
             {contacts.map((item: IContacts, index: number) => (
               <Styled.Contacts key={`${index}contacts`}>
-                <a target="_blank" href={item.url}>
+                <a target="_blank" rel="noopener" href={item.url}>
                   <FontAwesomeIcon icon={item.icon} />
                 </a>
               </Styled.Contacts>

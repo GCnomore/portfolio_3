@@ -3,7 +3,6 @@ import React from "react";
 import * as Styled from "./Current_Status_Styled";
 import { Divider } from "../../components/Divider/Divider";
 import Brain from "../../images/brain.png";
-import MyTerminal from "../../images/myTerminal.png";
 import { IProgrammingFocus, ProgrammingFocus } from "../../data/data";
 
 export default function Current_Status() {

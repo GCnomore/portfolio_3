@@ -1,11 +1,5 @@
 import styled from "styled-components/macro";
-import {
-  CONTAINER,
-  SCREEN_LG,
-  SCREEN_MD,
-  SCREEN_SM,
-  SCREEN_XL,
-} from "../../constants";
+import { CONTAINER, SCREEN_MD, SCREEN_SM, SCREEN_XL } from "../../constants";
 
 export const Container = styled(CONTAINER)`
   padding-bottom: 0;
