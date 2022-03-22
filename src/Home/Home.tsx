@@ -89,13 +89,13 @@ export default function Home() {
         <></>
       )}
 
-      {strike.show && (
+      {/* {strike.show && (
         <>
           <Styled.LightningCover strike={strike.show} />{" "}
           <Styled.Lightning1 strike={strike.show} src={Lightning1} />
           <Styled.Lightning2 strike={strike.show} src={Lightning2} />
         </>
-      )}
+      )} */}
     </Styled.Container>
   );
 }
