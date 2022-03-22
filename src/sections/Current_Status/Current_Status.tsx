@@ -8,8 +8,8 @@ import { IProgrammingFocus, ProgrammingFocus } from "../../data/data";
 
 export default function Current_Status() {
   const renderProgrammingFocus = (): JSX.Element[] => {
-    return ProgrammingFocus.map((item: IProgrammingFocus) => (
-      <Styled.FocusItem ratio={item.ratio}>
+    return ProgrammingFocus.map((item: IProgrammingFocus, index: number) => (
+      <Styled.FocusItem key={`${index}focus-${item.name}`} ratio={item.ratio}>
         <span>{item.name}</span>
         <div></div>
       </Styled.FocusItem>
