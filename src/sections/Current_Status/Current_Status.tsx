@@ -5,7 +5,7 @@ import { Divider } from "../../components/Divider/Divider";
 import Brain from "../../images/brain.png";
 import { IProgrammingFocus, ProgrammingFocus } from "../../data/data";
 
-export default function Current_Status() {
+export default function CurrentStatus() {
   const renderProgrammingFocus = (): JSX.Element[] => {
     return ProgrammingFocus.map((item: IProgrammingFocus, index: number) => (
       <Styled.FocusItem key={`${index}focus-${item.name}`} ratio={item.ratio}>

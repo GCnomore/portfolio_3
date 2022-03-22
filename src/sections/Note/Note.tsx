@@ -6,7 +6,7 @@ export default function Note() {
   return (
     <Styled.Container>
       <div>
-        <span>//</span>
+        <span>{"//"}</span>
         <span>
           <p>
             This is my <strong>THIRD</strong> portfolio website. <br />
@@ -23,7 +23,7 @@ export default function Note() {
             </li>
           </ol>
         </span>
-        <span>//</span>
+        <span>{"//"}</span>
       </div>
     </Styled.Container>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Divider } from "../../components/Divider/Divider";
-import Project_Card from "../../components/Project_Card/Project_Card";
+import ProjectCard from "../../components/Project_Card/Project_Card";
 import {
   CATEGORY,
   ICategory,
@@ -19,11 +19,11 @@ export default function Projects() {
     );
     if (category.name === "All") {
       return ProjectsData.map((project: IProjectData) => (
-        <Project_Card key={project.git} project={project} />
+        <ProjectCard key={project.git} project={project} />
       ));
     } else {
       return filteredProjects.map((project) => (
-        <Project_Card key={project.git} project={project} />
+        <ProjectCard key={project.git} project={project} />
       ));
     }
   };

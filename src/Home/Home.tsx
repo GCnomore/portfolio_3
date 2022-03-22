@@ -7,7 +7,7 @@ import Projects from "../sections/Projects/Projects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInbox, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import Current_Status from "../sections/Current_Status/Current_Status";
+import CurrentStatus from "../sections/Current_Status/Current_Status";
 import Layout from "../components/Layout/Layout";
 import Note from "../sections/Note/Note";
 
@@ -68,14 +68,14 @@ export default function Home() {
         <>
           <Layout>
             <About />
-            <Current_Status />
+            <CurrentStatus />
             <Projects />
             <Note />
           </Layout>
           <Styled.ContactContainer>
             {contacts.map((item: IContacts, index: number) => (
               <Styled.Contacts key={`${index}contacts`}>
-                <a target="_blank" rel="noopener" href={item.url}>
+                <a target="_blank" rel="noreferrer" href={item.url}>
                   <FontAwesomeIcon icon={item.icon} />
                 </a>
               </Styled.Contacts>

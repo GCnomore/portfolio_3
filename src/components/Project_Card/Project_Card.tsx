@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { IProjectData } from "../../data/data";
 import * as Styled from "./Project_Card_Styled";
 
-export default function Project_Card(props: { project: IProjectData }) {
+export default function ProjectCard(props: { project: IProjectData }) {
   const { content, git, label, name, src, link, tech } = props.project;
 
   const [showContent, setShowContent] = useState<boolean>(false);
@@ -13,7 +13,7 @@ export default function Project_Card(props: { project: IProjectData }) {
       onMouseEnter={() => setShowContent(true)}
       onMouseLeave={() => setShowContent(false)}
     >
-      <img src={src} />
+      <img alt="projects" src={src} />
       <Styled.Label letters={label.length} label={label}>
         {label}
       </Styled.Label>
