@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
+import ProjectModal from "../Project_Modal/Project_Modal";
 import { IProjectData } from "../../data/data";
 import * as Styled from "./Project_Card_Styled";
+import { ActionType, AppContext } from "../../reducer/AppReducer";
 
 export default function ProjectCard(props: { project: IProjectData }) {
   const { content, git, label, name, src, link, tech } = props.project;
-
+  const { state, dispatch } = useContext(AppContext);
   const [showContent, setShowContent] = useState<boolean>(false);
 
   return (
@@ -29,8 +31,21 @@ export default function ProjectCard(props: { project: IProjectData }) {
           </Styled.Techs>
         </Styled.TechsContainer>
         <Styled.Links>
-          <a href={git}>Github</a>
-          <a href={link}>See Project</a>
+          {git ? <a href={git}>Github</a> : <></>}
+          {link ? (
+            <a href={link}>See Project</a>
+          ) : (
+            <span
+              onClick={() =>
+                dispatch({
+                  type: ActionType.SHOW_PROJECT_MODAL,
+                  payload: !state.showProjectModal,
+                })
+              }
+            >
+              See Project
+            </span>
+          )}
         </Styled.Links>
       </Styled.Content>
     </Styled.Container>

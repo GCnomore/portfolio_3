@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 import Home from "./Home/Home";
 import "./App.css";
+import AppContextProvider from "./reducer/AppReducer";
 
 function App() {
   const firebaseConfig = {
@@ -22,9 +23,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <AppContextProvider>
+      <div className="App">
+        <Home />
+      </div>
+    </AppContextProvider>
   );
 }
 

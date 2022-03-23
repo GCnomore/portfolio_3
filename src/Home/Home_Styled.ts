@@ -34,14 +34,14 @@ const Lightning = keyframes`
   }
 `;
 
-export const Container = styled.main`
+export const Container = styled.main<{ showModal: boolean }>`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100vh;
   background-color: #242424;
   perspective: 10px;
-  overflow-y: auto;
+  overflow-y: ${({ showModal }) => (showModal ? "hidden" : "auto")};
   overflow-x: hidden;
 `;
 

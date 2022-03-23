@@ -10,6 +10,8 @@ import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import CurrentStatus from "../sections/Current_Status/Current_Status";
 import Layout from "../components/Layout/Layout";
 import Note from "../sections/Note/Note";
+import { useContext } from "react";
+import { AppContext } from "../reducer/AppReducer";
 
 interface IContacts {
   name: string;
@@ -36,6 +38,7 @@ const contacts: IContacts[] = [
 ];
 
 export default function Home() {
+  const { state, dispatch } = useContext(AppContext);
   const [isBgGone, setIsBgGone] = useState<boolean>(false);
   // const [strike, setStrike] = useState<{ show: boolean; count: number }>({
   //   show: false,
@@ -59,7 +62,10 @@ export default function Home() {
   // };
 
   return (
-    <Styled.Container>
+    <Styled.Container
+      showModal={state.showProjectModal}
+      className="home-container"
+    >
       {/* Background will be removed from DOM once animation is over */}
       <Background setIsBgGone={setIsBgGone} />
       <Header isBgGone={isBgGone} />

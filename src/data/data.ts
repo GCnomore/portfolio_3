@@ -4,6 +4,7 @@ import Pokedex from "../images/Pokedex_home.webp";
 import Moviehunt from "../images/Moviehunt.webp";
 import Kokoatalk from "../images/KokoaTalk_home.webp";
 import Todo from "../images/Todo_home.webp";
+import Terrakan from "../images/terrakan1.webp";
 
 export enum LABEL {
   PERSONAL = "PERSONAL",
@@ -16,7 +17,7 @@ export interface IProjectData {
   src: string;
   label: LABEL;
   content: string;
-  git: string;
+  git?: string;
   tech: string[];
   link?: string;
 }
@@ -110,6 +111,13 @@ export const ProjectsData: IProjectData[] = [
     git: "https://github.com/GCnomore/todoApp",
     tech: ["Vue", "Material Deisgn"],
     link: "https://gcnomore.github.io/todoApp/",
+  },
+  {
+    name: "Terrakan",
+    src: Terrakan,
+    content: "Real estate project management tool",
+    label: LABEL.WORK,
+    tech: ["Typescript", "NextJS", "NodeJS", "ExpressJS", "MySQL", "AWS"],
   },
 ];
 

@@ -96,4 +96,13 @@ export const Links = styled.div`
       color: ${FONT_HIGHLIGHT};
     }
   }
+
+  > span {
+    color: white;
+    text-decoration: underline;
+    &:hover {
+      cursor: pointer;
+      color: ${FONT_HIGHLIGHT};
+    }
+  }
 `;

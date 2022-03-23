@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { Divider } from "../../components/Divider/Divider";
 import ProjectCard from "../../components/Project_Card/Project_Card";
+import ProjectModal from "../../components/Project_Modal/Project_Modal";
 import {
   CATEGORY,
   ICategory,
@@ -50,6 +51,7 @@ export default function Projects() {
       <Styled.ProjectContainer>
         <div>{renderProjects()}</div>
       </Styled.ProjectContainer>
+      <ProjectModal />
     </Styled.Container>
   );
 }
