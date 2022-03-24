@@ -39,7 +39,10 @@ export default function ProjectCard(props: { project: IProjectData }) {
               onClick={() =>
                 dispatch({
                   type: ActionType.SHOW_PROJECT_MODAL,
-                  payload: !state.showProjectModal,
+                  payload: {
+                    isShow: !state.showProjectModal,
+                    project: props.project,
+                  },
                 })
               }
             >

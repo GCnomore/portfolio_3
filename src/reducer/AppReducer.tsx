@@ -1,4 +1,5 @@
 import React, { createContext, ReactNode, useReducer } from "react";
+import { IProjectData } from "../data/data";
 
 //* Compact... all in one
 // TODO: Separate when it scales?? maybe????
@@ -14,6 +15,7 @@ interface IAppContext {
 
 interface IAppState {
   showProjectModal: boolean;
+  modalProject: IProjectData | null;
 }
 
 interface IAppReducerAction {
@@ -27,6 +29,7 @@ type Props = {
 
 const appState: IAppState = {
   showProjectModal: false,
+  modalProject: null,
 };
 
 function init(initialState: IAppState) {
@@ -38,7 +41,8 @@ function appReducer(state: IAppState, action: IAppReducerAction): IAppState {
   switch (type) {
     case ActionType.SHOW_PROJECT_MODAL:
       return {
-        showProjectModal: payload,
+        showProjectModal: payload.isShow,
+        modalProject: payload.project,
       };
     default:
       return state;

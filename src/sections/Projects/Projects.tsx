@@ -9,9 +9,11 @@ import {
   IProjectData,
   ProjectsData,
 } from "../../data/data";
+import { AppContext } from "../../reducer/AppReducer";
 import * as Styled from "./Projects_Styled";
 
 export default function Projects() {
+  const { state, dispatch } = useContext(AppContext);
   const [category, setCategory] = useState<ICategory>({ id: 0, name: "All" });
 
   const renderProjects = (): JSX.Element[] => {
@@ -51,7 +53,7 @@ export default function Projects() {
       <Styled.ProjectContainer>
         <div>{renderProjects()}</div>
       </Styled.ProjectContainer>
-      <ProjectModal />
+      {state.showProjectModal && <ProjectModal />}
     </Styled.Container>
   );
 }

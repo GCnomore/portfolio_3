@@ -1,5 +1,12 @@
 import styled from "styled-components/macro";
-import { CONTAINER, SCREEN_MD, SCREEN_SM, SCREEN_XL } from "../../constants";
+import {
+  CONTAINER,
+  SCREEN_2XL,
+  SCREEN_LG,
+  SCREEN_MD,
+  SCREEN_SM,
+  SCREEN_XL,
+} from "../../constants";
 
 export const Container = styled(CONTAINER)`
   padding-bottom: 0;
@@ -61,6 +68,14 @@ export const ProjectContainer = styled.div`
   width: 100%;
   height: 100%;
 
+  @media (max-width: ${SCREEN_2XL}) {
+    width: 140% !important;
+  }
+
+  @media (max-width: ${SCREEN_MD}) {
+    width: 100% !important;
+  }
+
   > div {
     display: flex;
     flex-wrap: wrap;
@@ -69,6 +84,7 @@ export const ProjectContainer = styled.div`
     justify-content: center;
 
     @media (max-width: ${SCREEN_XL}) {
+      width: 150% !important;
       padding: 5rem 0;
     }
   }

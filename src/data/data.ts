@@ -5,6 +5,10 @@ import Moviehunt from "../images/Moviehunt.webp";
 import Kokoatalk from "../images/KokoaTalk_home.webp";
 import Todo from "../images/Todo_home.webp";
 import Terrakan from "../images/terrakan1.webp";
+import Terrakan2 from "../images/terrakan2.webp";
+import Terrakan3 from "../images/terrakan3.webp";
+import Terrakan4 from "../images/terrakan4.webp";
+import Terrakan5 from "../images/terrakan5.webp";
 
 export enum LABEL {
   PERSONAL = "PERSONAL",
@@ -20,6 +24,8 @@ export interface IProjectData {
   git?: string;
   tech: string[];
   link?: string;
+  images?: string[];
+  description?: string[];
 }
 
 export interface ICategory {
@@ -118,6 +124,14 @@ export const ProjectsData: IProjectData[] = [
     content: "Real estate project management tool",
     label: LABEL.WORK,
     tech: ["Typescript", "NextJS", "NodeJS", "ExpressJS", "MySQL", "AWS"],
+    images: [Terrakan, Terrakan2, Terrakan3, Terrakan4, Terrakan5],
+    description: [
+      "Real estate project management tool for both project managers and investors.",
+      "Dark mode available.",
+      "Fully responsive bar graph relative to the project & phase length.",
+      "Widgets that show assigned tasks and activities.",
+      "Activities page with with pagination. Provides filter option to filter out by project and date range",
+    ],
   },
 ];
 
