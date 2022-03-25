@@ -20,12 +20,10 @@ export const BackDrop = styled.div<{
 
 const scale = keyframes`
   0% {
-    height:10vw;
-    width: 10vw;
+    transform: scale(0.1)
   }
   100% {
-    height: 90vh;
-    width: 80vw;
+    transform: scale(1)
   }
 `;
 

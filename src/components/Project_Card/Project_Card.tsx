@@ -14,7 +14,11 @@ export default function ProjectCard(props: { project: IProjectData }) {
     <Styled.Container
       onMouseEnter={() => setShowContent(true)}
       onMouseLeave={() => setShowContent(false)}
-      onPointerDown={() => setShowContent(!showContent)}
+      onPointerDown={() =>
+        setTimeout(() => {
+          setShowContent(!showContent);
+        }, 200)
+      }
     >
       <img alt="projects" src={src} />
       <Styled.Label letters={label.length} label={label}>
