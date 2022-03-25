@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { SCREEN_2XL, SCREEN_LG, SCREEN_SM } from "../../constants";
 
 export const BackDrop = styled.div<{
   isShow: boolean;
@@ -65,6 +66,24 @@ export const ArrowContainer = styled.div`
       transition: 0.2s ease-in-out;
     }
   }
+
+  @media (max-width: ${SCREEN_2XL}) {
+    width: 120%;
+    left: -10%;
+  }
+
+  @media (max-width: ${SCREEN_LG}) {
+    width: 150%;
+    left: -25%;
+    > span {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: ${SCREEN_SM}) {
+    width: 160%;
+    left: -30%;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -75,7 +94,14 @@ export const ImageContainer = styled.div`
   align-items: flex-start;
 
   > img {
-    width: 100%;
+    max-width: 60vw;
+    max-height: 90vh;
+  }
+
+  @media (max-width: ${SCREEN_LG}) {
+    > img {
+      max-width: 80vw;
+    }
   }
 `;
 
@@ -90,5 +116,19 @@ export const DescriptionContainer = styled.div`
     padding: 0;
     text-align: center;
     font-size: 19px;
+  }
+
+  @media (max-width: ${SCREEN_LG}) {
+    > p {
+      font-size: 17px;
+    }
+  }
+
+  @media (max-width: ${SCREEN_SM}) {
+    padding: 0 0.25rem;
+
+    > p {
+      font-size: 14px;
+    }
   }
 `;

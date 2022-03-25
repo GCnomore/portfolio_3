@@ -4,11 +4,18 @@ import Pokedex from "../images/Pokedex_home.webp";
 import Moviehunt from "../images/Moviehunt.webp";
 import Kokoatalk from "../images/KokoaTalk_home.webp";
 import Todo from "../images/Todo_home.webp";
-import Terrakan from "../images/terrakan1.webp";
-import Terrakan2 from "../images/terrakan2.webp";
-import Terrakan3 from "../images/terrakan3.webp";
-import Terrakan4 from "../images/terrakan4.webp";
-import Terrakan5 from "../images/terrakan5.webp";
+import Terrakan from "../images/projects/terrakan/terrakan1.webp";
+import Terrakan2 from "../images/projects/terrakan/terrakan2.webp";
+import Terrakan3 from "../images/projects/terrakan/terrakan3.webp";
+import Terrakan4 from "../images/projects/terrakan/terrakan4.webp";
+import Terrakan5 from "../images/projects/terrakan/terrakan5.webp";
+import Terraclose from "../images/projects/terraclose/terraclose1.webp";
+import Terraclose2 from "../images/projects/terraclose/terraclose2.webp";
+import Terraclose3 from "../images/projects/terraclose/terraclose3.webp";
+import Terraclose4 from "../images/projects/terraclose/terraclose4.webp";
+import Terraclose5 from "../images/projects/terraclose/terraclose5.webp";
+import Terraclose6 from "../images/projects/terraclose/terraclose6.webp";
+import Terraclose7 from "../images/projects/terraclose/terraclose7.webp";
 
 export enum LABEL {
   PERSONAL = "PERSONAL",
@@ -131,6 +138,31 @@ export const ProjectsData: IProjectData[] = [
       "Fully responsive bar graph relative to the project & phase length.",
       "Widgets that show assigned tasks and activities.",
       "Activities page with with pagination. Provides filter option to filter out by project and date range",
+    ],
+  },
+  {
+    name: "Terraclose",
+    src: Terraclose,
+    content: "Real estate live streaming mobile application",
+    label: LABEL.WORK,
+    tech: ["React Native", "Redux", "MySQL", "Firebase", "RTMPS"],
+    images: [
+      Terraclose,
+      Terraclose2,
+      Terraclose3,
+      Terraclose4,
+      Terraclose5,
+      Terraclose6,
+      Terraclose7,
+    ],
+    description: [
+      "Map view with clusters indicating listed properties",
+      "List view showing baisc information on each property",
+      "Auto-complete searching function with recent search archive",
+      "List of vendors registered with Terraclose",
+      "Detail listing page of a property. Users can submit offers, leave a comment, favorite the listing to receive notification about update on current property, request live tour to see the property via live stream.",
+      "Streamer's view of live tour page. Streaming live video using RTMPS protocol. Streamer and viewrs can chat while streaming",
+      "Account information page",
     ],
   },
 ];
