@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.7070504f.css",
-    "main.js": "/static/js/main.be2f4664.js",
+    "main.css": "/static/css/main.86e44224.css",
+    "main.js": "/static/js/main.62f64b19.js",
     "static/media/pngegg.webp": "/static/media/pngegg.bbd884be75a24ae746ff.webp",
     "static/media/brain.png": "/static/media/brain.da29269a1d5c03aea473.png",
     "static/media/cloud3.webp": "/static/media/cloud3.04d5c59b8faa14db7a7c.webp",
@@ -10,15 +10,27 @@
     "static/media/FoodApp_home.webp": "/static/media/FoodApp_home.f4aa8500a6651becb00b.webp",
     "static/media/Moviehunt.webp": "/static/media/Moviehunt.454095025e7096f8e27c.webp",
     "static/media/cloud2.webp": "/static/media/cloud2.11a175f83fd7194cd9a3.webp",
+    "static/media/terraclose5.webp": "/static/media/terraclose5.8fbb6f028971cc8b35ab.webp",
+    "static/media/terraclose1.webp": "/static/media/terraclose1.1b50fe683a2649d47d7b.webp",
+    "static/media/terraclose2.webp": "/static/media/terraclose2.0482e93b13a9c58e5b3d.webp",
     "static/media/Pokedex_home.webp": "/static/media/Pokedex_home.bb0df6d564ed3970be85.webp",
+    "static/media/terraclose4.webp": "/static/media/terraclose4.05c770739c43447f54e2.webp",
+    "static/media/terraclose6.webp": "/static/media/terraclose6.cc1855dfd4ed51e0e80b.webp",
+    "static/media/terrakan1.webp": "/static/media/terrakan1.9fbeddafb5f061d0e14a.webp",
+    "static/media/terraclose3.webp": "/static/media/terraclose3.ab6344befe3daa2aa932.webp",
+    "static/media/terrakan2.webp": "/static/media/terrakan2.38a73c6baad8663ca7bf.webp",
+    "static/media/terrakan5.webp": "/static/media/terrakan5.3e5b69d187c0e12f3d66.webp",
+    "static/media/terrakan3.webp": "/static/media/terrakan3.83035a8de9e4af978cc8.webp",
+    "static/media/terrakan4.webp": "/static/media/terrakan4.e5218a82b5ba4d892935.webp",
     "static/media/KokoaTalk_home.webp": "/static/media/KokoaTalk_home.0ad4f9a4c9d3d3fe9899.webp",
+    "static/media/terraclose7.webp": "/static/media/terraclose7.ed419fc5a65b1d3e1c1e.webp",
     "static/media/Todo_home.webp": "/static/media/Todo_home.47bf42ce4129159c1a95.webp",
     "index.html": "/index.html",
-    "main.7070504f.css.map": "/static/css/main.7070504f.css.map",
-    "main.be2f4664.js.map": "/static/js/main.be2f4664.js.map"
+    "main.86e44224.css.map": "/static/css/main.86e44224.css.map",
+    "main.62f64b19.js.map": "/static/js/main.62f64b19.js.map"
   },
   "entrypoints": [
-    "static/css/main.7070504f.css",
-    "static/js/main.be2f4664.js"
+    "static/css/main.86e44224.css",
+    "static/js/main.62f64b19.js"
   ]
 }
