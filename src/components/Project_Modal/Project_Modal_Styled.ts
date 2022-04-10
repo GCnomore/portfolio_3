@@ -1,5 +1,10 @@
 import styled, { keyframes } from "styled-components";
-import { SCREEN_2XL, SCREEN_LG, SCREEN_SM } from "../../constants";
+import {
+  FONT_HIGHLIGHT,
+  SCREEN_2XL,
+  SCREEN_LG,
+  SCREEN_SM,
+} from "../../constants";
 
 export const BackDrop = styled.div<{
   isShow: boolean;
@@ -62,6 +67,11 @@ export const ArrowContainer = styled.div`
     &:active {
       transform: scale(0.9);
       transition: 0.2s ease-in-out;
+      color: ${FONT_HIGHLIGHT};
+    }
+
+    &:hover {
+      cursor: pointer;
     }
   }
 

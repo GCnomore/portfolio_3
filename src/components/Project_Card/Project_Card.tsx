@@ -12,6 +12,7 @@ export default function ProjectCard(props: { project: IProjectData }) {
 
   return (
     <Styled.Container
+      className="fadeIn"
       onMouseEnter={() => setShowContent(true)}
       onMouseLeave={() => setShowContent(false)}
       onPointerDown={() =>
