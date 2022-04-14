@@ -5,7 +5,11 @@ import About from "../sections/About/About";
 import Header from "../sections/Header/Header";
 import Projects from "../sections/Projects/Projects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInbox, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import {
+  faInbox,
+  IconDefinition,
+  faPencil,
+} from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import CurrentStatus from "../sections/Current_Status/Current_Status";
 import Layout from "../components/Layout/Layout";
@@ -34,6 +38,11 @@ const contacts: IContacts[] = [
     name: "Email",
     url: "mailto:isaacgc08@gmail.com",
     icon: faInbox,
+  },
+  {
+    name: "Blog",
+    url: "https://gcblog.vercel.app/",
+    icon: faPencil,
   },
 ];
 
