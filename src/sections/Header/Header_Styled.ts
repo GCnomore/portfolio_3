@@ -35,7 +35,7 @@ export const Title = styled.div`
   }
 
   > h1:nth-child(2) {
-    font-size: 4.1rem;
+    font-size: 3.85rem;
     margin: 0;
   }
 

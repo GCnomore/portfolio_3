@@ -21,7 +21,7 @@ const Header: React.FC<CoverProps> = ({ isBgGone }) => {
       <Styled.Cloud3 src={cloud3} />
       <Styled.Title>
         <h1>ISAAC CHOI</h1>
-        <h1>FONTEND DEVELOPER</h1>
+        <h1>FRONTEND DEVELOPER</h1>
       </Styled.Title>
     </Styled.Container>
   );
