@@ -21,7 +21,7 @@ export default function FadeInDown({
         if (!_fadeIn && entries[0].isIntersecting) {
           setTimeout(() => {
             _setFadeIn(true);
-          }, delay * 1000);
+          }, delay * 500);
         }
       }
     );
