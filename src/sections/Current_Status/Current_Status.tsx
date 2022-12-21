@@ -39,7 +39,7 @@ export default function CurrentStatus() {
               <span>Financial Freedom</span>
             </Styled.Focus3>
             <Styled.Focus4>
-              <span>Wife</span>
+              <span>Family</span>
             </Styled.Focus4>
             <Styled.Focus5>
               <span>Get Mac???</span>

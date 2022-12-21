@@ -17,6 +17,6 @@ export const Tiles = styled.div<{
   height: ${({ size }) => size - 4}px;
   min-width: 50px;
   min-height: 50px;
-  border: 1px #121212 solid;
+  border: 1px #494949 solid;
   background-color: #191919;
 `;
