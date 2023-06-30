@@ -13,6 +13,7 @@ export const Container = styled.div`
   position: relative;
   font-family: ${FONT_FAMILY};
   transition: 0.5s;
+  cursor: pointer;
 
   @media (max-width: ${SCREEN_XL}) {
     width: 18rem;
@@ -22,10 +23,6 @@ export const Container = styled.div`
   > img {
     height: 100%;
   }
-`;
-
-export const Cover = styled.div`
-  position: absolute;
 `;
 
 export const Label = styled.div<{ letters: number; label: string }>`
@@ -43,66 +40,4 @@ export const Label = styled.div<{ letters: number; label: string }>`
   padding: 0 2rem;
   letter-spacing: 1px;
   z-index: 2;
-`;
-
-export const Content = styled.div<{ show: boolean }>`
-  position: absolute;
-  display: ${({ show }) => (show ? "flex" : "none")};
-  background-color: rgba(0, 0, 0, 0.6);
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-`;
-
-export const TechsContainer = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 10%;
-
-  > span {
-    text-decoration: underline;
-  }
-`;
-
-export const Techs = styled.ul`
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-
-  > li {
-    margin-right: 0.5rem;
-  }
-`;
-
-export const Links = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10%;
-  > a {
-    color: white;
-    text-decoration: underline;
-    &:hover {
-      color: ${FONT_HIGHLIGHT};
-    }
-  }
-
-  > span {
-    color: white;
-    text-decoration: underline;
-    &:hover {
-      cursor: pointer;
-      color: ${FONT_HIGHLIGHT};
-    }
-  }
 `;

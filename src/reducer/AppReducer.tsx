@@ -3,11 +3,6 @@ import { IProjectData } from "../data/data";
 
 //* Compact... all in one
 // TODO: Separate when it scales?? maybe????
-
-export enum ActionType {
-  SHOW_PROJECT_MODAL = "SHOW_PROJECT_MODAL",
-}
-
 interface IAppContext {
   state: IAppState;
   dispatch: React.Dispatch<IAppReducerAction>;
@@ -16,11 +11,12 @@ interface IAppContext {
 interface IAppState {
   showProjectModal: boolean;
   modalProject: IProjectData | null;
+  scrollContainer: HTMLDivElement | null;
 }
 
 interface IAppReducerAction {
-  type: ActionType;
-  payload: any;
+  type: string;
+  payload?: any;
 }
 
 type Props = {
@@ -30,6 +26,7 @@ type Props = {
 const appState: IAppState = {
   showProjectModal: false,
   modalProject: null,
+  scrollContainer: null,
 };
 
 function init(initialState: IAppState) {
@@ -39,11 +36,17 @@ function init(initialState: IAppState) {
 function appReducer(state: IAppState, action: IAppReducerAction): IAppState {
   const { type, payload } = action;
   switch (type) {
-    case ActionType.SHOW_PROJECT_MODAL:
-      return {
-        showProjectModal: payload.isShow,
-        modalProject: payload.project,
-      };
+    case 'showProjectModal':
+      state.modalProject = payload.project;
+      state.showProjectModal = payload.isShow;
+      return state;
+    case 'setScrollContainer':
+      state.scrollContainer = payload.container;
+      return state;
+    case 'hideProjectModal':
+      state.showProjectModal = false;
+      state.modalProject = null;
+      return state;
     default:
       return state;
   }

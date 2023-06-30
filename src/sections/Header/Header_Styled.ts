@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled, { keyframes } from "styled-components/macro";
 import {
   CONTAINER,
   FONT_FAMILY,
@@ -9,11 +9,21 @@ import {
   SCREEN_XS,
 } from "../../constants";
 
-export const Container = styled(CONTAINER)<{ isBgGone: boolean }>`
-  display: ${({ isBgGone }) => (isBgGone ? "flex" : "none")};
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+export const Container = styled(CONTAINER)`
+  display: flex;
   height: 100%;
   transform-style: preserve-3d;
   position: relative;
+
 `;
 
 export const Title = styled.div`
@@ -21,56 +31,69 @@ export const Title = styled.div`
   position: absolute;
   transform: translateZ(-5px) scale(1.5);
   text-align: center;
+  opacity: 0;
+  animation: ${fadeIn} 0.5s ease-in forwards;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
 
   > h1 {
     color: white;
     font-family: ${FONT_FAMILY};
     text-shadow: 4px 4px 2px black;
     user-select: none;
+    margin: 0;
   }
 
   > h1:nth-child(1) {
     font-size: 8rem;
-    margin: 0 0 -5rem 0;
+    line-height: 5rem;
+    /* margin: 0 0 -5rem 0; */
   }
 
   > h1:nth-child(2) {
     font-size: 3.85rem;
+    line-height: 3.85rem;
     margin: 0;
   }
 
   @media (max-width: ${SCREEN_MD}) {
     > h1:nth-child(1) {
-      font-size: 6rem;
-      margin: 0 0 -4rem 0;
+      font-size: 6.4rem;
+      line-height: 4rem;
+      margin: 0;
     }
 
     > h1:nth-child(2) {
       font-size: 3.1rem;
+      line-height: 3rem;
       margin: 0;
     }
   }
 
   @media (max-width: ${SCREEN_SM}) {
     > h1:nth-child(1) {
-      font-size: 5rem;
-      margin: 0 0 -3rem 0;
+      font-size: 5.4rem;
+      line-height: 4rem;
+      margin: 0;
     }
 
     > h1:nth-child(2) {
       font-size: 2.6rem;
+      line-height: 2rem;
       margin: 0;
     }
   }
 
   @media (max-width: ${SCREEN_XS}) {
     > h1:nth-child(1) {
-      font-size: 3.5rem;
-      margin: 0 0 -2rem 0;
+      font-size: 3.8rem;
+      line-height: 3rem;
+      margin: 0;
     }
 
     > h1:nth-child(2) {
       font-size: 1.8rem;
+      line-height: 1.5rem;
       margin: 0;
     }
   }
@@ -83,6 +106,7 @@ export const Bg1 = styled.img`
   top: -200%;
   transform: translateZ(-20px) scale(3);
   user-select: none;
+  z-index: -1;
 
   @media (max-width: ${SCREEN_2XL}) {
     top: -100%;
@@ -122,7 +146,7 @@ export const Cloud2 = styled.img`
   min-width: 400px;
   top: 70vh;
   left: 100vw;
-  transform: translateZ(-10px) scale(1.2);
+  transform: translateZ(-8px) scale(1.2);
   filter: drop-shadow(10px 25px 10px #121212);
   user-select: none;
 

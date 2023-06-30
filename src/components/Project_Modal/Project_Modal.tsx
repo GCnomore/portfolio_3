@@ -1,101 +1,148 @@
 import React, { MouseEvent, useEffect, useRef, useState } from "react";
 import { useContext } from "react";
-import { ActionType, AppContext } from "../../reducer/AppReducer";
+import { AppContext } from "../../reducer/AppReducer";
 
 import * as Styled from "./Project_Modal_Styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { IProjectData } from "../../data/data";
+import SmoothScroll from "../../lib/smoothScroll";
+import { Modal, ModalBody } from "react-bootstrap";
+import { JsxElement } from "typescript";
+interface IProjectModalProps {
+  showModal: boolean;
+  selectedProject: IProjectData | null;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  smoothScroll: SmoothScroll | null;
+  containerRef: HTMLDivElement | null;
+}
 
-export default function ProjectModal(): JSX.Element {
+const ProjectModal: React.FC<IProjectModalProps> = (props) => {
   const { state, dispatch } = useContext(AppContext);
-
-  const [scTop, setScTop] = useState<number>(0);
-  const [imgIndex, setImgIndex] = useState<number>(0);
-
-  useEffect(() => {
-    console.log(imgIndex);
-  }, [imgIndex]);
+  const [modalWidth, setModalWidth] = useState<number>(0);
+  const isMobile = props.selectedProject?.platform.includes("Mobile") ?? false;
 
   useEffect(() => {
-    document.addEventListener("keydown", onEscPressed);
-
-    return () => {
-      document.removeEventListener("keydown", onEscPressed);
-    };
-  }, []);
-
-  useEffect(() => {
-    const homeContainer: Element | null =
-      document.querySelector(".home-container");
-    if (homeContainer) {
-      setScTop(homeContainer.scrollTop);
+    if (props.containerRef) {
+      console.log(
+        "containerRef.current",
+        props.containerRef.getBoundingClientRect()
+      );
+      setModalWidth(props.containerRef.getBoundingClientRect().width);
     }
-  }, [state.showProjectModal]);
+  }, [props.containerRef]);
 
-  const closeModal = (): void => {
-    dispatch({
-      type: ActionType.SHOW_PROJECT_MODAL,
-      payload: !state.showProjectModal,
-    });
+  const hideModal = (e: React.MouseEvent) => {
+    props.setShowModal(false);
+    state.scrollContainer?.setAttribute("style", "overflow-y: auto");
+    props.smoothScroll?.init();
   };
 
-  const onEscPressed = (e: KeyboardEvent): void => {
-    if (e.code === "Escape") {
-      closeModal();
+  const renderImages = (): JSX.Element[] | null => {
+    if(props.selectedProject) {
+      console.log('here')
+      return props.selectedProject?.images.map((i)=> {
+        return (
+          <Styled.ProjectImages isMobile={isMobile}>
+            <img src={i} />
+          </Styled.ProjectImages>
+        )
+      });
+    } else {
+      return null;
     }
-  };
-
-  const handleArrowClick = (direction: string): void => {
-    if (state.modalProject?.images) {
-      if (direction === "prev") {
-        if (imgIndex === 0) {
-          console.log("hereeeeeeee");
-          setImgIndex(state.modalProject.images.length - 1);
-        } else {
-          setImgIndex(imgIndex - 1);
-        }
-      } else {
-        if (imgIndex === state.modalProject.images.length - 1) {
-          setImgIndex(0);
-        } else {
-          setImgIndex(imgIndex + 1);
-        }
-      }
-    }
-  };
+  }
 
   return (
-    <Styled.BackDrop
-      onClick={(e: MouseEvent) => {
-        if (e.target === e.currentTarget) {
-          closeModal();
-        }
-      }}
-      isShow={state.showProjectModal}
-      scTop={scTop}
+    <Styled.Container
+      show={props.showModal}
+      centered
+      fullscreen
+      animation
+      scrollable
+      onEscapeKeyDown={hideModal}
     >
-      <Styled.ModalBody>
+      <Styled.Body>
+        <Styled.Header>
+          <Styled.CloseBtn onClick={hideModal}>
+            <FontAwesomeIcon icon={faTimes} />
+          </Styled.CloseBtn>
+        </Styled.Header>
+
         <div>
-          <Styled.ArrowContainer>
-            <span onClick={() => handleArrowClick("prev")}>{"<"}</span>
-            <span onClick={() => handleArrowClick("next")}>{">"}</span>
-          </Styled.ArrowContainer>
-          <Styled.ImageContainer>
-            {state.modalProject?.images ? (
-              <img
-                alt="project screenshot"
-                src={state.modalProject.images[imgIndex]}
-              />
-            ) : (
-              <></>
-            )}
-          </Styled.ImageContainer>
-          <Styled.DescriptionContainer>
-            <p>
-              {state.modalProject?.description &&
-                state.modalProject.description[imgIndex]}
-            </p>
-          </Styled.DescriptionContainer>
+          <Styled.MainImgContainer isMobile={isMobile}>
+            <img src={props.selectedProject?.images && props.selectedProject?.images[0]}/>
+          </Styled.MainImgContainer>
+
+          <Styled.Description>
+            <div className="w-full border-b-2 mb-6">
+              <h2 className="text-2xl font-bold">{props.selectedProject?.name}</h2>
+            </div>
+
+            <div className="flex flex-col">
+              <Styled.TableRow className="flex">
+                <h4>Project Category</h4>
+                <p>{props.selectedProject?.label}</p>
+              </Styled.TableRow>
+
+              <Styled.TableRow className="flex">
+                <h4>Tech Used</h4>
+                <p>{props.selectedProject?.tech.join(", ")}</p>
+              </Styled.TableRow>
+
+              <div className="flex">
+                <Styled.TableRow>
+                  <h4>Key Contribution</h4>
+                </Styled.TableRow>
+
+                <div className="mt-[1rem] w-full">
+                  <div className="flex">
+                    <span className="align-top w-40">Front-end</span>
+                    <ul className="flex flex-col w-full mb-4 ml-10">
+                      {props.selectedProject?.feContribution.map((i) => (
+                        <li className="mb-2" key={i}>
+                          {i}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="flex">
+                    <p className="align-top w-40">Back-end</p>
+                    <ul className="flex flex-col w-full ml-10">
+                      {props.selectedProject?.beContribution.map((i) => (
+                        <li className="mb-2" key={i}>
+                          {i}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <Styled.TableRow className="flex">
+                <h4>Features</h4>
+                <ul>
+                  {props.selectedProject?.features?.map((f, i)=> <li className="mb-2" key={f + i}>{f}</li>)}
+                </ul>
+              </Styled.TableRow>
+
+              <Styled.TableRow className="flex">
+                <h4>Description</h4>
+                <p>{props.selectedProject?.description}</p>
+              </Styled.TableRow>
+            </div>
+
+            <div className="mt-20">
+              <ul className={isMobile ? 'flex flex-wrap justify-center' : 'flex flex-col'}>
+                {renderImages()}
+              </ul>
+            </div>
+          </Styled.Description>
         </div>
-      </Styled.ModalBody>
-    </Styled.BackDrop>
+      </Styled.Body>
+    </Styled.Container>
   );
-}
+};
+
+export default ProjectModal;

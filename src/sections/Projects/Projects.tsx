@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 
 import { Divider } from "../../components/Divider/Divider";
 import ProjectCard from "../../components/Project_Card/Project_Card";
@@ -11,10 +11,18 @@ import {
 } from "../../data/data";
 import { AppContext } from "../../reducer/AppReducer";
 import * as Styled from "./Projects_Styled";
+import SmoothScroll from "../../lib/smoothScroll";
 
-export default function Projects() {
+interface IProjectsProps {
+  smoothScroll: SmoothScroll | null;
+}
+
+const Projects:React.FC<IProjectsProps> = ({smoothScroll}) => {
   const { state, dispatch } = useContext(AppContext);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [category, setCategory] = useState<ICategory>({ id: 0, name: "All" });
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [selectedProject, setSelectedProject] = useState<IProjectData | null>(null);
 
   const renderProjects = (): JSX.Element[] => {
     const filteredProjects = ProjectsData.filter(
@@ -22,21 +30,23 @@ export default function Projects() {
     );
     if (category.name === "All") {
       return ProjectsData.map((project: IProjectData) => (
-        <ProjectCard key={project.git} project={project} />
+        <ProjectCard key={project.git} project={project} setSelectedProject={setSelectedProject} setShowModal={setShowModal} smoothScroll={smoothScroll} />
       ));
     } else {
       return filteredProjects.map((project) => (
-        <ProjectCard key={project.git} project={project} />
+        <ProjectCard key={project.git} project={project} setSelectedProject={setSelectedProject} setShowModal={setShowModal} smoothScroll={smoothScroll} />
       ));
     }
   };
 
   return (
-    <Styled.Container>
+    <Styled.Container ref={containerRef}>
       <Styled.SectionTitle>
-        <h2>Projects</h2>
+        <h2 className="text-2xl font-bold">Projects</h2>
       </Styled.SectionTitle>
+
       <Divider />
+
       <Styled.CategoryContainer>
         <ul>
           {CATEGORY.map((item: ICategory, index: number) => (
@@ -50,10 +60,22 @@ export default function Projects() {
           ))}
         </ul>
       </Styled.CategoryContainer>
+
       <Styled.ProjectContainer>
         <div>{renderProjects()}</div>
       </Styled.ProjectContainer>
-      {state.showProjectModal && <ProjectModal />}
+      <ProjectModal 
+        containerRef={containerRef.current} 
+        showModal={showModal} 
+        setShowModal={setShowModal} 
+        selectedProject={selectedProject} 
+        smoothScroll={smoothScroll} 
+      />
+
+      {/* <div>
+      </div> */}
     </Styled.Container>
   );
 }
+
+export default Projects;

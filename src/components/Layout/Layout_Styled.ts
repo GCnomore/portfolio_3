@@ -9,8 +9,10 @@ import {
 } from "../../constants";
 
 export const Container = styled.div`
-  padding: 0 25%;
+  /* padding: 0 25%; */
+  width: 1024px;
   position: relative;
+  margin: 0 auto;
 
   @media (max-width: ${SCREEN_2XL}) {
     padding: 0 20%;

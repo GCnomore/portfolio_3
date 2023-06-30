@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense, useRef, useEffect } from "react";
 import * as Styled from "./Home_Styled";
-import Background from "../components/Background/Background";
+import Layout from "../components/Layout/Layout";
 import About from "../sections/About/About";
-import Header from "../sections/Header/Header";
-import Projects from "../sections/Projects/Projects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInbox,
@@ -11,11 +9,11 @@ import {
   faPencil,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import CurrentStatus from "../sections/Current_Status/Current_Status";
-import Layout from "../components/Layout/Layout";
-import Note from "../sections/Note/Note";
 import { useContext } from "react";
 import { AppContext } from "../reducer/AppReducer";
+import Projects from "../sections/Projects/Projects";
+import Header from "../sections/Header/Header";
+import SmoothScroll from "../lib/smoothScroll";
 
 interface IContacts {
   name: string;
@@ -48,66 +46,42 @@ const contacts: IContacts[] = [
 
 export default function Home() {
   const { state, dispatch } = useContext(AppContext);
-  const [isBgGone, setIsBgGone] = useState<boolean>(false);
-  // const [strike, setStrike] = useState<{ show: boolean; count: number }>({
-  //   show: false,
-  //   count: 0,
-  // });
-
-  // const trackScroll = (e: React.UIEvent<HTMLDivElement>): void => {
-  //   const scrollHeight: number = e.currentTarget.scrollHeight;
-  //   const currentHeight: number = e.currentTarget.scrollTop;
-
-  //   if (
-  //     currentHeight >= scrollHeight * 0.3 &&
-  //     currentHeight <= scrollHeight * 0.32 &&
-  //     strike.count === 0
-  //   ) {
-  //     setStrike({ show: true, count: 0 });
-  //     setTimeout(() => {
-  //       setStrike({ show: false, count: 1 });
-  //     }, 1000);
-  //   }
-  // };
-
+  const container = useRef<HTMLDivElement>(null);
+  const [smoothScroll, setSmoothScroll] = useState<SmoothScroll | null>(null);
+  
+  useEffect(()=> {
+    const _smoothScroll = new SmoothScroll(container.current, 100, 16);
+    setSmoothScroll(_smoothScroll);
+    _smoothScroll.init();
+    
+    dispatch({
+      type: 'setScrollContainer',
+      payload: { container: container.current }
+    });
+    // setContainerRef(container.current);
+  }, []);
   return (
     <Styled.Container
+      ref={container}
       showModal={state.showProjectModal}
       className="home-container"
     >
-      {/* Background will be removed from DOM once animation is over */}
-      <Background setIsBgGone={setIsBgGone} />
-      <Header isBgGone={isBgGone} />
+      <Header/>
+      <Layout>
+        <About />
+      </Layout>
+  
+      <Projects smoothScroll={smoothScroll} />
 
-      {isBgGone ? (
-        <>
-          <Layout>
-            <About />
-            <CurrentStatus />
-            <Projects />
-            <Note />
-          </Layout>
-          <Styled.ContactContainer>
-            {contacts.map((item: IContacts, index: number) => (
-              <Styled.Contacts key={`${index}contacts`}>
-                <a target="_blank" rel="noreferrer" href={item.url}>
-                  <FontAwesomeIcon icon={item.icon} />
-                </a>
-              </Styled.Contacts>
-            ))}
-          </Styled.ContactContainer>
-        </>
-      ) : (
-        <></>
-      )}
-
-      {/* {strike.show && (
-        <>
-          <Styled.LightningCover strike={strike.show} />{" "}
-          <Styled.Lightning1 strike={strike.show} src={Lightning1} />
-          <Styled.Lightning2 strike={strike.show} src={Lightning2} />
-        </>
-      )} */}
+      <Styled.ContactContainer>
+        {contacts.map((item: IContacts, index: number) => (
+          <Styled.Contacts key={`${index}contacts`}>
+            <a target="_blank" rel="noreferrer" href={item.url}>
+              <FontAwesomeIcon icon={item.icon} />
+            </a>
+          </Styled.Contacts>
+        ))}
+      </Styled.ContactContainer>
     </Styled.Container>
   );
 }

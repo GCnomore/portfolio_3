@@ -10,6 +10,7 @@ import {
 
 export const Container = styled(CONTAINER)`
   padding-bottom: 0;
+  z-index: 1;
 `;
 
 export const SectionTitle = styled.div`

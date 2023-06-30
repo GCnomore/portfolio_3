@@ -5,138 +5,125 @@ import {
   SCREEN_LG,
   SCREEN_SM,
 } from "../../constants";
+import { Modal, ModalBody, ModalProps } from "react-bootstrap";
 
-export const BackDrop = styled.div<{
-  isShow: boolean;
-  scTop: number;
-}>`
-  z-index: 100;
-  height: 100vh;
-  width: 1000vh;
-  user-select: none;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(1.2px);
-  position: fixed;
-  top: ${(props) => props.scTop + "px"};
-  display: ${({ isShow }) => (isShow ? "flex" : "none")};
-  justify-content: center;
-  align-items: center;
-`;
-
-const scale = keyframes`
-  0% {
-    transform: scale(0.1)
-  }
-  100% {
-    transform: scale(1)
-  }
-`;
-
-export const ModalBody = styled.div`
-  z-index: 200;
-  width: 60vw;
-  background-color: #191919;
-  backdrop-filter: blur(1.2px);
-  animation-name: ${scale};
-  animation-duration: 0.4s;
-  animation-timing-function: ease-out;
-
-  > div {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-  }
-`;
-
-export const ArrowContainer = styled.div`
-  position: absolute;
-  width: 110%;
+export const Container = styled(Modal)<ModalProps>`
   display: flex;
-  justify-content: space-between;
-  left: -5%;
-  top: 50%;
-  transform: translateY(-50%);
+  
+  > .modal-dialog {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    max-height: 100%;
+    background-color: #242424;
+    justify-content: flex-start;
 
-  > span {
-    font-size: 5rem;
-    font-weight: 900;
-    color: white;
-
-    &:active {
-      transform: scale(0.9);
-      transition: 0.2s ease-in-out;
-      color: ${FONT_HIGHLIGHT};
-    }
-
-    &:hover {
-      cursor: pointer;
+    .modal-content {
+      border-radius: 0;
     }
   }
 
-  @media (max-width: ${SCREEN_2XL}) {
-    width: 120%;
-    left: -10%;
+  tr {
+    padding-bottom: 5rem;
   }
 
-  @media (max-width: ${SCREEN_LG}) {
-    width: 150%;
-    left: -25%;
-    > span {
-      font-size: 3rem;
-    }
+  tr > td {
+    min-width: 20rem;
+    padding-bottom: 1rem;
   }
 
-  @media (max-width: ${SCREEN_SM}) {
-    width: 160%;
-    left: -30%;
+  ul {
+    list-style: circle;
   }
-`;
+  `;
 
-export const ImageContainer = styled.div`
-  height: 100%;
+export const Body = styled(ModalBody)`
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  height: 100%;
+  background-color: #242424;
+  color: white;
+  padding-top: 0px;
 
-  > img {
-    max-width: 60vw;
-    max-height: 90vh;
+  &::-webkit-scrollbar {
+    width: 4px;
   }
 
-  @media (max-width: ${SCREEN_LG}) {
-    > img {
-      max-width: 80vw;
-    }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
   }
 `;
 
-export const DescriptionContainer = styled.div`
+export const Header = styled.div`
+  display: flex;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 0px;
+  justify-content: flex-end;
+`;
+
+export const CloseBtn = styled.button`
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 3rem;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+`;
+
+export const MainImgContainer = styled.div<{isMobile: boolean}>`
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 0 3rem;
 
-  > p {
+> img {
+  width: ${({isMobile})=> isMobile ? 'auto' : '65vw'};
+  height: ${({isMobile})=> isMobile ? '65vh' : 'auto'};
+  margin: 0 auto;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+`;
+
+export const TableRow = styled.div`
+  display: flex;
+  margin: 1rem 0 1rem 0;
+
+  > h4 {
+    width: 20rem;
+    flex-shrink: 0;
+  }
+`;
+
+export const ProjectImages = styled.li<{isMobile: boolean}>`
+  list-style: none;
+  width: ${({isMobile})=> isMobile ? '30%' : '100%'};
+  margin: ${({isMobile})=> isMobile ? '0 2rem 2rem 0' : '0 0 2rem 0'};
+  
+  > img {
     width: 100%;
-    padding: 0;
-    text-align: center;
-    font-size: 19px;
   }
+`;
 
-  @media (max-width: ${SCREEN_LG}) {
-    > p {
-      font-size: 17px;
-    }
-  }
-
-  @media (max-width: ${SCREEN_SM}) {
-    padding: 0 0.25rem;
-
-    > p {
-      font-size: 14px;
-    }
-  }
+export const Description = styled.div`
+  width: 65vw;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem auto 0 auto;
 `;

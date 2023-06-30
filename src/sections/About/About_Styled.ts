@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 import { CONTAINER, FONT_FAMILY, FONT_HIGHLIGHT } from "../../constants";
 
 export const Container = styled(CONTAINER)`
-  margin-top: 120vh;
+  margin-top: 80vh;
   color: white;
   display: flex;
 `;

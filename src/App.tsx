@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 import Home from "./Home/Home";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import AppContextProvider from "./reducer/AppReducer";
 
