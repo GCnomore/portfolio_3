@@ -13,22 +13,25 @@ export const Container = styled.div`
   width: 1024px;
   position: relative;
   margin: 0 auto;
+  display: flex;
 
   @media (max-width: ${SCREEN_2XL}) {
-    padding: 0 20%;
+    /* padding: 0 20%; */
   }
 
   @media (max-width: ${SCREEN_XL}) {
+    width: 720px;
   }
 
   @media (max-width: ${SCREEN_LG}) {
   }
 
   @media (max-width: ${SCREEN_MD}) {
+    width: 520px;
   }
 
   @media (max-width: ${SCREEN_SM}) {
-    padding: 0 10%;
+    width: 320px;
   }
 
   @media (max-width: ${SCREEN_XS}) {

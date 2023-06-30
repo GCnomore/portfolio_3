@@ -70,7 +70,7 @@ export const ProjectContainer = styled.div`
   height: 100%;
 
   @media (max-width: ${SCREEN_2XL}) {
-    width: 140% !important;
+    /* width: 140% !important; */
   }
 
   @media (max-width: ${SCREEN_MD}) {
