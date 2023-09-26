@@ -24,9 +24,6 @@ export default function About() {
           My primary focus is writing clean, maintainable code that ensures high-quality solutions. 
           I have a passion for continuous learning and enjoy staying updated with the latest industry trends and technologies. 
           As a self-motivated individual, I thrive on new challenges and embrace opportunities to grow both personally and professionally.
-          <br />
-          <br />
-          I THINK I am good with handling my stress because I do not believe in burn-out nor had one before.
         </Styled.Content>
       </FadeInDown>
     </Styled.Container>
