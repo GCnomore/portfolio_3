@@ -86,7 +86,7 @@ export interface IProjectData {
 }
 
 export interface ICategory {
-  id: number;
+  id: string;
   name: string;
 }
 
@@ -97,19 +97,19 @@ export interface IProgrammingFocus {
 
 export const CATEGORY: ICategory[] = [
   {
-    id: 0,
+    id: 'cat-0',
     name: "All",
   },
   {
-    id: 1,
+    id: 'cat-1',
     name: "Work",
   },
   {
-    id: 2,
+    id: 'cat-2',
     name: "Personal",
   },
   {
-    id: 3,
+    id: 'cat-3',
     name: "Bootcamp",
   },
 ];
@@ -129,9 +129,14 @@ export const ProjectsData: IProjectData[] = [
       "Create user account using email or 3rd party account to store preference data",
       "Receive status update via phone call or text message",
     ],
-    description: "A web application that makes pet grooming appointment online. Users can create account to save their preference on grooming and view activity history. Planning to provide admin panel for grooming stores to oversee their online appointments and operation.",
+    description: `A web application that makes pet grooming appointment online. 
+                  Users can create account to save their preference on grooming and view activity history. 
+                  Planning to provide admin panel for grooming stores to oversee their online appointments and operation.<br/> 
+                  This project is now serious and turned into a private project.
+                  `,
     feContribution: ['All'],
-    beContribution: ['All']
+    beContribution: ['All'],
+    // git: 'https://github.com/GCnomore/grooming',
   },
   {
     name: "TQUENS",
@@ -152,7 +157,8 @@ export const ProjectsData: IProjectData[] = [
     ],
     description: "Amazon seller's assistant automates user's workflow and scale business",
     feContribution: ['Review request automation', 'PPC manager', 'Reports Manager', 'Email Notification', 'Some landing pages', 'Grid library', 'Dropdown library', 'Serveral helper functions'],
-    beContribution: ['Data modeling', 'REST API design']
+    beContribution: ['Data modeling', 'REST API design'],
+    link: 'https://tquens.com/'
   },
   {
     name: "THE FOOD APP",
@@ -229,6 +235,7 @@ export const ProjectsData: IProjectData[] = [
     git: "https://github.com/GCnomore/gcboard",
     tech: ["React", "Styled-Component"],
     link: "https://gcnomore.github.io/gcboard/",
+    description: "Toy project inspired by Trello.",
     images: [GCboard, GCboard1, GCboard2, GCboard3, GCboard4, GCboard5],
     feContribution: ['All'],
     beContribution: ['N/A'],
@@ -250,8 +257,8 @@ export const ProjectsData: IProjectData[] = [
       "Passport",
       "MongoDB",
     ],
-    description: "Project no long on live... Heroku is no longer providing free tier service.",
-    link: "https://moviehunt-gc.herokuapp.com/client/",
+    description: "Project no longer on live... Heroku is no longer providing free tier service.",
+    // link: "https://moviehunt-gc.herokuapp.com/client/",
     images: [Moviehunt, Moviehunt1, Moviehunt2, Moviehunt3, Moviehunt5, Moviehunt6, Moviehunt7],
     feContribution: ['All'],
     beContribution: ['All']
@@ -265,6 +272,12 @@ export const ProjectsData: IProjectData[] = [
     content: "A website shows Pokemon information!",
     git: "https://github.com/GCnomore/pokedex",
     tech: ["Jquery", "Bootstrap"],
+    features: [
+      "Various animations",
+      "Infinite scroll loading",
+      "Search Pokemons"
+    ],
+    description: "Pokedex that shows detailed information of Pokemons with various animations. This project is being featured by CareerFoundy and can be seen on their website.",
     link: "https://gcnomore.github.io/pokedex/",
     images: [Pokedex, Pokedex1, Pokedex2, Pokedex3],
     feContribution: ['All'],

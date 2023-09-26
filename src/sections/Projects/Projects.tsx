@@ -20,7 +20,7 @@ interface IProjectsProps {
 const Projects:React.FC<IProjectsProps> = ({smoothScroll}) => {
   const { state, dispatch } = useContext(AppContext);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [category, setCategory] = useState<ICategory>({ id: 0, name: "All" });
+  const [category, setCategory] = useState<ICategory>(CATEGORY[0]);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<IProjectData | null>(null);
 
@@ -30,11 +30,15 @@ const Projects:React.FC<IProjectsProps> = ({smoothScroll}) => {
     );
     if (category.name === "All") {
       return ProjectsData.map((project: IProjectData) => (
-        <ProjectCard key={project.git} project={project} setSelectedProject={setSelectedProject} setShowModal={setShowModal} smoothScroll={smoothScroll} />
+        <div key={project.git}>
+          <ProjectCard project={project} setSelectedProject={setSelectedProject} setShowModal={setShowModal} smoothScroll={smoothScroll} />
+        </div>
       ));
     } else {
       return filteredProjects.map((project) => (
-        <ProjectCard key={project.git} project={project} setSelectedProject={setSelectedProject} setShowModal={setShowModal} smoothScroll={smoothScroll} />
+        <div key={project.git}>
+          <ProjectCard project={project} setSelectedProject={setSelectedProject} setShowModal={setShowModal} smoothScroll={smoothScroll} />
+        </div>
       ));
     }
   };
@@ -51,9 +55,9 @@ const Projects:React.FC<IProjectsProps> = ({smoothScroll}) => {
         <ul>
           {CATEGORY.map((item: ICategory, index: number) => (
             <Styled.Category
-              selected={index === category.id}
-              key={`${item.name}${index}`}
-              onClick={() => setCategory({ id: index, name: item.name })}
+              selected={item.id === category.id}
+              key={item.id}
+              onClick={() => setCategory(item)}
             >
               {item.name}
             </Styled.Category>

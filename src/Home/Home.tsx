@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import * as Styled from "./Home_Styled";
 import Layout from "../components/Layout/Layout";
 import About from "../sections/About/About";

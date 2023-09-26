@@ -1,4 +1,4 @@
-import React, { MouseEvent, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useContext } from "react";
 import { AppContext } from "../../reducer/AppReducer";
 
@@ -7,8 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { IProjectData } from "../../data/data";
 import SmoothScroll from "../../lib/smoothScroll";
-import { Modal, ModalBody } from "react-bootstrap";
-import { JsxElement } from "typescript";
 interface IProjectModalProps {
   showModal: boolean;
   selectedProject: IProjectData | null;
@@ -18,19 +16,8 @@ interface IProjectModalProps {
 }
 
 const ProjectModal: React.FC<IProjectModalProps> = (props) => {
-  const { state, dispatch } = useContext(AppContext);
-  const [modalWidth, setModalWidth] = useState<number>(0);
+  const { state } = useContext(AppContext);
   const isMobile = props.selectedProject?.platform.includes("Mobile") ?? false;
-
-  useEffect(() => {
-    if (props.containerRef) {
-      console.log(
-        "containerRef.current",
-        props.containerRef.getBoundingClientRect()
-      );
-      setModalWidth(props.containerRef.getBoundingClientRect().width);
-    }
-  }, [props.containerRef]);
 
   const hideModal = (e: React.MouseEvent) => {
     props.setShowModal(false);
@@ -40,7 +27,6 @@ const ProjectModal: React.FC<IProjectModalProps> = (props) => {
 
   const renderImages = (): JSX.Element[] | null => {
     if(props.selectedProject) {
-      console.log('here')
       return props.selectedProject?.images.map((i)=> {
         return (
           <Styled.ProjectImages isMobile={isMobile}>
@@ -71,12 +57,38 @@ const ProjectModal: React.FC<IProjectModalProps> = (props) => {
 
         <div>
           <Styled.MainImgContainer isMobile={isMobile}>
-            <img src={props.selectedProject?.images && props.selectedProject?.images[0]}/>
+            <img alt="project" src={props.selectedProject?.images && props.selectedProject?.images[0]}/>
           </Styled.MainImgContainer>
 
           <Styled.Description>
-            <div className="w-full border-b-2 mb-6">
-              <h2 className="text-2xl font-bold">{props.selectedProject?.name}</h2>
+            <div className="w-full border-b-2 mb-6 flex items-center">
+              <h2 className="text-2xl font-bold mr-20">{props.selectedProject?.name}</h2>
+              {
+                props.selectedProject?.link &&
+                  (
+                    <a
+                      className="underline mr-10" 
+                      href={props.selectedProject?.link} 
+                      target="_blank" 
+                      rel="noreferrer"
+                    >
+                      Visit project
+                    </a>
+                  )               
+              }
+              {
+                props.selectedProject?.git &&
+                  (
+                    <a
+                      className="underline" 
+                      href={props.selectedProject?.git} 
+                      target="_blank" 
+                      rel="noreferrer"
+                    >
+                      Visit Git
+                    </a>
+                  )
+              }
             </div>
 
             <div className="flex flex-col">
@@ -129,7 +141,7 @@ const ProjectModal: React.FC<IProjectModalProps> = (props) => {
 
               <Styled.TableRow className="flex">
                 <h4>Description</h4>
-                <p>{props.selectedProject?.description}</p>
+                <p dangerouslySetInnerHTML={{__html: props.selectedProject?.description ?? ''}}></p>
               </Styled.TableRow>
             </div>
 
