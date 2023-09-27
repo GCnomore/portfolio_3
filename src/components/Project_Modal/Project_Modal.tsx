@@ -62,33 +62,41 @@ const ProjectModal: React.FC<IProjectModalProps> = (props) => {
 
           <Styled.Description>
             <div className="w-full border-b-2 mb-6 flex items-center">
-              <h2 className="text-2xl font-bold mr-20">{props.selectedProject?.name}</h2>
-              {
-                props.selectedProject?.link &&
-                  (
-                    <a
-                      className="underline mr-10" 
-                      href={props.selectedProject?.link} 
-                      target="_blank" 
-                      rel="noreferrer"
-                    >
-                      Visit project
-                    </a>
-                  )               
-              }
-              {
-                props.selectedProject?.git &&
-                  (
-                    <a
-                      className="underline" 
-                      href={props.selectedProject?.git} 
-                      target="_blank" 
-                      rel="noreferrer"
-                    >
-                      Visit Git
-                    </a>
-                  )
-              }
+              <h2 className="text-2xl font-bold">{props.selectedProject?.name}</h2>
+              <div className="flex ml-2">
+                {
+                  props.selectedProject?.icons?.map((icon)=> <img className="w-6 h-6 mr-1" alt="tech" src={icon.src} title={icon.name} />)
+                }
+              </div>
+
+              <div className="ml-auto">
+                {
+                  props.selectedProject?.link &&
+                    (
+                      <a
+                        className="underline" 
+                        href={props.selectedProject?.link} 
+                        target="_blank" 
+                        rel="noreferrer"
+                      >
+                        Visit project
+                      </a>
+                    )               
+                }
+                {
+                  props.selectedProject?.git &&
+                    (
+                      <a
+                        className="ml-10 underline" 
+                        href={props.selectedProject?.git} 
+                        target="_blank" 
+                        rel="noreferrer"
+                      >
+                        Visit Git
+                      </a>
+                    )
+                }
+              </div>
             </div>
 
             <div className="flex flex-col">
@@ -109,7 +117,7 @@ const ProjectModal: React.FC<IProjectModalProps> = (props) => {
 
                 <div className="mt-[1rem] w-full">
                   <div className="flex">
-                    <span className="align-top w-40">Front-end</span>
+                    <span className="align-top w-40 underline">Front-end</span>
                     <ul className="flex flex-col w-full mb-4 ml-10">
                       {props.selectedProject?.feContribution.map((i) => (
                         <li className="mb-2" key={i}>
@@ -120,7 +128,7 @@ const ProjectModal: React.FC<IProjectModalProps> = (props) => {
                   </div>
 
                   <div className="flex">
-                    <p className="align-top w-40">Back-end</p>
+                    <p className="align-top w-40 underline">Back-end</p>
                     <ul className="flex flex-col w-full ml-10">
                       {props.selectedProject?.beContribution.map((i) => (
                         <li className="mb-2" key={i}>

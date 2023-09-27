@@ -7,6 +7,7 @@ import bg1 from "../../images/bg2.webp";
 import cloud1 from "../../images/cloud1.webp";
 import cloud2 from "../../images/cloud2.webp";
 import cloud3 from "../../images/cloud3.webp";
+import sky2 from '../../images/sky2.png';
 
 const Header: React.FC = () => {
   const stars = new Array(60).fill(1);
@@ -25,7 +26,7 @@ const Header: React.FC = () => {
     }
 
     const starSize = _.random(12, 24);
-    const top = _.random(min, max);
+    const top = _.random(min + 500, max + 900);
     const left = _.random(-50, 150);
     const zScale = _.random(4, 18);
 
@@ -50,6 +51,7 @@ const Header: React.FC = () => {
       <Styled.Cloud1 src={cloud1} />
       <Styled.Cloud2 src={cloud2} />
       <Styled.Cloud3 src={cloud3} />
+      <Styled.Galaxy src={sky2} />
       <Styled.Title>
         <h1>ISAAC CHOI</h1>
         <h1>FRONTEND DEVELOPER</h1>

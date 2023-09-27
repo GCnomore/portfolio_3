@@ -23,7 +23,7 @@ export const Container = styled(CONTAINER)`
   height: 100%;
   transform-style: preserve-3d;
   position: relative;
-
+  z-index: -1;
 `;
 
 export const Title = styled.div`
@@ -164,4 +164,19 @@ export const Cloud3 = styled.img`
   left: 10vw;
   filter: drop-shadow(20px 25px 5px #191919);
   user-select: none;
+`;
+
+export const Galaxy = styled.img`
+  position: absolute;
+  width: 1400px;
+  top: 135vh;
+  left: -35vw;
+  transform: translateZ(-7px) scale(1.4);
+  filter: drop-shadow(-10px 20px 20px black);
+  user-select: none;
+
+  @media (max-width: ${SCREEN_MD}) {
+    top: 135vh;
+    width: 900px;
+  }
 `;

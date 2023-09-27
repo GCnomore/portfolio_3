@@ -19,6 +19,7 @@ export const Content = styled.span`
   align-items: flex-end;
   justify-content: center;
   font-size: 1.3rem;
+  filter: drop-shadow(1px 1px 1px black);
 
   > p {
     color: ${FONT_HIGHLIGHT};

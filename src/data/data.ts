@@ -56,6 +56,28 @@ import Tquens7 from "../images/projects/tquens/tquens7.webp";
 import Tquens8 from "../images/projects/tquens/tquens8.webp";
 import Tquens9 from "../images/projects/tquens/tquens9.webp";
 
+import CHRRY from '../images/projects/Chrry/Chrry_home.webp';
+
+import aws from '../images/icons/aws.svg';
+import bootstrap from '../images/icons/bootstrap.svg';
+import firebase from '../images/icons/firebase.svg';
+import javascript from '../images/icons/javascript.svg';
+import jquery from '../images/icons/jquery.svg';
+import mongodb from '../images/icons/mongodb.svg';
+import mysql from '../images/icons/mysql.svg';
+import nextjs from '../images/icons/nextjs.svg';
+import nodejs from '../images/icons/nodejs.svg';
+import python from '../images/icons/python.svg';
+import react from '../images/icons/react.svg';
+import redux from '../images/icons/redux.svg';
+import scss from '../images/icons/scss.svg';
+import typescript from '../images/icons/typescript.svg';
+import vue from '../images/icons/vue.svg';
+import tailwind from '../images/icons/tailwind.svg';
+import html from '../images/icons/html.svg';
+import css from '../images/icons/css.svg';
+
+
 export enum LABEL {
   PERSONAL = "PERSONAL",
   BOOTCAMP = "BOOTCAMP",
@@ -83,6 +105,7 @@ export interface IProjectData {
   description?: string;
   feContribution: string[];
   beContribution: string[];
+  icons?: any[];
 }
 
 export interface ICategory {
@@ -122,7 +145,7 @@ export const ProjectsData: IProjectData[] = [
     platform: 'Web App',
     content: "Appointment application for pet grooming services",
     label: LABEL.PERSONAL,
-    tech: ["Typescript", "React", "React Hook Form", "Redux Toolkit", "Styled-Component", "NodeJS", "Express", "MongoDB"],
+    tech: ["Typescript", "React", "React Hook Form", "Redux Toolkit", "Styled-Component", "Tailwind CSS", "NodeJS", "Express", "MongoDB"],
     images: [Grooming1, Grooming2, Grooming3],
     features: [
       "Make an appointment online",
@@ -136,6 +159,7 @@ export const ProjectsData: IProjectData[] = [
                   `,
     feContribution: ['All'],
     beContribution: ['All'],
+    icons: [{name: 'Typescript', src: typescript}, {name: 'React', src: react}, {name: 'Redux', src: redux}, {name: 'Tailwind CSS', src: tailwind}, {name: 'Node JS', src: nodejs}, {name: 'Mongo DB', src: mongodb}]
     // git: 'https://github.com/GCnomore/grooming',
   },
   {
@@ -145,7 +169,7 @@ export const ProjectsData: IProjectData[] = [
     platform: 'Web App',
     content: "Automation application for Amazon sellers",
     label: LABEL.WORK,
-    tech: ['Vue', 'Pinia', 'Kendo UI', 'Python', 'Fast API', 'MongoDB', 'AWS'],
+    tech: ['React', 'Redux Toolkit', 'NodeJS', 'SCSS', 'Typescript', 'Vue', 'Tailwind CSS', 'Pinia', 'Kendo UI', 'Python', 'Fast API', 'MongoDB', 'AWS'],
     images: [Tquens1, Tquens2, Tquens3, Tquens4, Tquens5, Tquens6, Tquens7, Tquens8, Tquens9],
     features: [
       "Reviews and rating tracker",
@@ -158,7 +182,8 @@ export const ProjectsData: IProjectData[] = [
     description: "Amazon seller's assistant automates user's workflow and scale business",
     feContribution: ['Review request automation', 'PPC manager', 'Reports Manager', 'Email Notification', 'Some landing pages', 'Grid library', 'Dropdown library', 'Serveral helper functions'],
     beContribution: ['Data modeling', 'REST API design'],
-    link: 'https://tquens.com/'
+    link: 'https://tquens.com/',
+    icons: [{name: 'React', src: react}, {name: 'Redux', src: redux}, {name: 'Node JS', src: nodejs}, {name: 'SCSS', src: scss}, {naem: 'Typescript', src: typescript}, {name: 'Vue', src: vue}, {name: 'Tailwind CSS', src: tailwind}, {name: 'Python', src: python}, {name: 'Mongo DB', src: mongodb}, {name: 'AWS', src: aws}]
   },
   {
     name: "THE FOOD APP",
@@ -169,10 +194,11 @@ export const ProjectsData: IProjectData[] = [
     content: "A simple recipe finding app",
     git: "https://github.com/GCnomore/foodApp",
     tech: ["Typescript", "React", "Styled-Component", "NodeJS", "Express"],
-    description: 'Web application that finds recipe of food by the ingredients it receives. I am no longer working on thi project because the api cost is very expensive.', 
+    description: 'Web application that finds recipe of food by the ingredients it receives. I am no longer working on this project due to high api cost.', 
     images: [FoodApp, FoodApp1, FoodApp2, FoodApp3, FoodApp4],
     feContribution: ['All'],
     beContribution: ['All'],
+    icons: [{name: 'Typescript', src: typescript}, {name: 'React', src: react}, {name: 'Node JS', src: nodejs}]
   },
   {
     name: "Terrakan",
@@ -192,6 +218,7 @@ export const ProjectsData: IProjectData[] = [
     description: "Real estate project management tool for both project managers and investors.",
     feContribution: ['All components and page of "Overview", "Projects", "Meetings", and "Activity"', 'Light mode / Dark mode color theme.', 'Modularized 10,000+ lines of code files into maintainable modules'],
     beContribution: ['None'],
+    icons: [{name: 'Typescript', src: typescript}, {name: 'Next JS', src: nextjs}, {name: 'Node JS', src: nodejs}, {name: 'MySQL', src: mysql}, {name: 'AWS', src: aws}]
   },
   {
     name: "Closr",
@@ -223,7 +250,8 @@ export const ProjectsData: IProjectData[] = [
     ],
     description: "Marketplace for real estate sellers and buyers. Provides live streaming service that allows hosts to introduce their house to the potential buyers.",
     feContribution: ['RTMPS live streaming service along with chatting feature with user privilege depending on their role.', 'Commnet feature with sub-comment and likes.', 'All components and page of "Listings - List View", "Listings - Detail", "Vendor - List", "Vendor - Detail", "Live Streaming".'],
-    beContribution: ['Introduced and implemented "Firebase" for live streaming feature', 'Structured and implemented "Firestore" and "Cloud Functions" for chat service', 'Implemented "Realtime DB" for live streamings', 'Implemented "Firebase Analytics"']
+    beContribution: ['Introduced and implemented "Firebase" for live streaming feature', 'Structured and implemented "Firestore" and "Cloud Functions" for chat service', 'Implemented "Realtime DB" for live streamings', 'Implemented "Firebase Analytics"'],
+    icons: [{name: 'React Native', src: react}, {name: 'Redux', src: redux}, {name: 'MySQL', src: mysql}, {name: 'Firebase', src: firebase}]
   },
   {
     name: "GC board",
@@ -239,6 +267,7 @@ export const ProjectsData: IProjectData[] = [
     images: [GCboard, GCboard1, GCboard2, GCboard3, GCboard4, GCboard5],
     feContribution: ['All'],
     beContribution: ['N/A'],
+    icons: [{name: 'React', src: react}]
   },
   {
     name: "MovieHunt",
@@ -261,7 +290,8 @@ export const ProjectsData: IProjectData[] = [
     // link: "https://moviehunt-gc.herokuapp.com/client/",
     images: [Moviehunt, Moviehunt1, Moviehunt2, Moviehunt3, Moviehunt5, Moviehunt6, Moviehunt7],
     feContribution: ['All'],
-    beContribution: ['All']
+    beContribution: ['All'],
+    icons: [{name: 'React', src: react}, {name: 'Sass', src: scss}, {name: 'Redux', src: redux}, {name: 'Node JS', src: nodejs}, {naem: 'Mongo DB', src: mongodb}]
   },
   {
     name: "Pokedex",
@@ -277,29 +307,29 @@ export const ProjectsData: IProjectData[] = [
       "Infinite scroll loading",
       "Search Pokemons"
     ],
-    description: "Pokedex that shows detailed information of Pokemons with various animations. This project is being featured by CareerFoundy and can be seen on their website.",
+    description: `Pokedex that shows detailed information of Pokemons with various animations. <br/>
+                  <b>This project is being featured by CareerFoundy and can be seen on their website.</b>`,
     link: "https://gcnomore.github.io/pokedex/",
     images: [Pokedex, Pokedex1, Pokedex2, Pokedex3],
     feContribution: ['All'],
     beContribution: ['N/A'],
+    icons: [{name: 'Jquery', src: jquery}, {name: 'Bootstrap', src: bootstrap}]
   },
-  // {
-  //   name: "KokoaTalk",
-  //   src: Kokoatalk,
-  //   label: LABEL.BOOTCAMP,
-  //   content: "Chat app made with React Native!",
-  //   git: "https://github.com/GCnomore/chatApp",
-  //   tech: ["React-Native", "Expo", "React Navigation", "Firebase"],
-  // },
-  // {
-  //   name: "TodoApp",
-  //   src: Todo,
-  //   label: LABEL.BOOTCAMP,
-  //   content: "Simple todo app made with Vue",
-  //   git: "https://github.com/GCnomore/todoApp",
-  //   tech: ["Vue", "Material Deisgn"],
-  //   link: "https://gcnomore.github.io/todoApp/",
-  // },
+  {
+    name: "CHRRY",
+    src: CHRRY,
+    link: 'https://chrry.io/',
+    label: LABEL.WORK,
+    content: "Capture and shop what you see",
+    tech: ["HTML", "CSS", "Javascript", "Tailwind CSS"],
+    icons: [{name: 'HTML', src: html}, {name: 'CSS', src: css}, {name: 'Javascript', src: javascript}, {name: 'Tailwind CSS', src: tailwind}],
+    feContribution: ['All'],
+    beContribution: ['N/A'],
+    images: [CHRRY],
+    platform: 'Web',
+    status: STATUS.PUBLIC,
+    description: "Ladning page of my side project team's product. Simple layout with call to action buttons."
+  },
 ];
 
 export const ProgrammingFocus: IProgrammingFocus[] = [

@@ -6,8 +6,9 @@ export const Container = styled.main<{ showModal: boolean }>`
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background-color: #242424;
   perspective: 10px;
+  /* background-color: #242424; */
+  background: linear-gradient(180deg, hsla(0, 0%, 14%, 1) 70%, hsla(0, 0%, 16%, 1) 100%);
   overflow-y: ${({ showModal }) => (showModal ? "hidden" : "overlay")};
   overflow-x: hidden;
 

@@ -14,6 +14,7 @@ import { AppContext } from "../reducer/AppReducer";
 import Projects from "../sections/Projects/Projects";
 import Header from "../sections/Header/Header";
 import SmoothScroll from "../lib/smoothScroll";
+import Timeline from '../sections/Timeline/Timeline';
 
 interface IContacts {
   name: string;
@@ -70,6 +71,8 @@ export default function Home() {
       <Layout>
         <About />
       </Layout>
+      
+      <Timeline />
   
       <Projects smoothScroll={smoothScroll} />
 

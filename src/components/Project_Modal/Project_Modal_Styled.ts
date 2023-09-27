@@ -23,6 +23,10 @@ export const Container = styled(Modal)<ModalProps>`
     }
   }
 
+  h4 {
+    text-decoration: underline;
+  }
+
   tr {
     padding-bottom: 5rem;
   }
