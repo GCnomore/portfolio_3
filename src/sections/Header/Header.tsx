@@ -51,14 +51,14 @@ const Header: React.FC = () => {
       <Styled.Cloud1 src={cloud1} />
       <Styled.Cloud2 src={cloud2} />
       <Styled.Cloud3 src={cloud3} />
-      <Styled.Galaxy src={sky2} />
+      {/* <Styled.Galaxy src={sky2} /> */}
       <Styled.Title>
         <h1>ISAAC CHOI</h1>
         <h1>FRONTEND DEVELOPER</h1>
       </Styled.Title>
-      {
+      {/* {
         stars.map((_, i)=> renderStar(i))
-      }
+      } */}
     </Styled.Container>
   );
 };

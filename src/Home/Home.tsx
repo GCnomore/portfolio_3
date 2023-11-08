@@ -38,11 +38,11 @@ const contacts: IContacts[] = [
     url: "mailto:isaacgc08@gmail.com",
     icon: faInbox,
   },
-  {
-    name: "Blog",
-    url: "https://gcblog.vercel.app/",
-    icon: faPencil,
-  },
+  // {
+  //   name: "Blog",
+  //   url: "https://gcblog.vercel.app/",
+  //   icon: faPencil,
+  // },
 ];
 
 export default function Home() {
@@ -72,7 +72,7 @@ export default function Home() {
         <About />
       </Layout>
       
-      <Timeline />
+      {/* <Timeline /> */}
   
       <Projects smoothScroll={smoothScroll} />
 

@@ -41,7 +41,7 @@ export const Container = styled.div`
    p {
       font-size: 24px;
       margin: 1rem 0;
-      width: 400px;
+      width: 600px;
       text-align: left;
       line-height: 26px;
       filter: drop-shadow(1px 1px 1px black);
