@@ -52,7 +52,7 @@ export const Title = styled.div`
 
   > h1:nth-child(2) {
     font-size: 3.85rem;
-    line-height: 3.85rem;
+    line-height: 4.85rem;
     margin: 0;
   }
 

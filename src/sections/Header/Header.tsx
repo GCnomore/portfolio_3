@@ -26,7 +26,7 @@ const Header: React.FC = () => {
     }
 
     const starSize = _.random(12, 24);
-    const top = _.random(min + 500, max + 900);
+    const top = _.random(min + 80, max + 300);
     const left = _.random(-50, 150);
     const zScale = _.random(4, 18);
 
@@ -56,9 +56,9 @@ const Header: React.FC = () => {
         <h1>ISAAC CHOI</h1>
         <h1>FRONTEND DEVELOPER</h1>
       </Styled.Title>
-      {/* {
+      {
         stars.map((_, i)=> renderStar(i))
-      } */}
+      }
     </Styled.Container>
   );
 };
